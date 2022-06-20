@@ -1,0 +1,20 @@
+export default {
+  routeNames: {
+    PUBLIC: 'Public',
+    PRIVATE: 'Private',
+    STDETAILS: 'StDetails',
+    STATIONS: 'Stations',
+    SWAPS: 'SwStations',
+    CHARGERS: 'ChStations',
+    LOGIN: 'Login',
+    SINGUP: 'Signup',
+    ONBOARDING: 'Onboarding',
+    Profile: 'UserProfile',
+    PR_STACK: 'Profile',
+    CHARGE: 'ChargeUp',
+    CHG_STACK: 'Charge',
+    ST_STACK: 'Maps',
+    SW_STACK: 'Swaps',
+    CH_STACK: 'Chargers',
+  },
+};
