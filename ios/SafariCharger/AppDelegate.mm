@@ -1,4 +1,3 @@
-#import <GoogleMaps/GoogleMaps.h>
 #import "AppDelegate.h"
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -24,6 +23,8 @@
 }
 @end
 #endif
+
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
