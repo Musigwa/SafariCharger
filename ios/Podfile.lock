@@ -306,6 +306,10 @@ PODS:
   - React-jsinspector (0.68.2)
   - React-logger (0.68.2):
     - glog
+  - react-native-geolocation (2.1.0):
+    - React-Core
+  - react-native-geolocation-service (5.3.0):
+    - React
   - react-native-google-maps (0.31.1):
     - Google-Maps-iOS-Utils (= 4.1.0)
     - GoogleMaps (= 6.1.1)
@@ -434,6 +438,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
+  - react-native-geolocation-service (from `../node_modules/react-native-geolocation-service`)
   - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-maps (from `../node_modules/react-native-maps`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -509,6 +515,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-geolocation:
+    :path: "../node_modules/@react-native-community/geolocation"
+  react-native-geolocation-service:
+    :path: "../node_modules/react-native-geolocation-service"
   react-native-google-maps:
     :path: "../node_modules/react-native-maps"
   react-native-maps:
@@ -578,6 +588,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: b7b553412f2ec768fe6c8f27cd6bafdb9d8719e6
   React-jsinspector: c5989c77cb89ae6a69561095a61cce56a44ae8e8
   React-logger: a0833912d93b36b791b7a521672d8ee89107aff1
+  react-native-geolocation: 69f4fd37650b8e7fee91816d395e62dd16f5ab8d
+  react-native-geolocation-service: f32ef48fa665bd710207a3ac39bc127cac9cb993
   react-native-google-maps: 8231ffa015bf8b222c2e2661fa9163cdb609a224
   react-native-maps: 8b8bfada2c86205a7f5a07dd1f92f29b33ea83aa
   react-native-safe-area-context: 6c12e3859b6f27b25de4fee8201cfb858432d8de
@@ -598,6 +610,6 @@ SPEC CHECKSUMS:
   Yoga: 99652481fcd320aefa4a7ef90095b95acd181952
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 66d743f7df290d215fc56123c2254ddee8675719
+PODFILE CHECKSUM: 525da9311abc9d1bdc492e3cdcb4e107f449878b
 
 COCOAPODS: 1.11.3

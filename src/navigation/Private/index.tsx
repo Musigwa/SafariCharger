@@ -43,7 +43,8 @@ const PrivateNavigator = () => {
             <Icon name={iconName} size={size} color={color} type={iconType} />
           );
         },
-      })}>
+      })}
+    >
       <BottomTab.Screen
         name={routeNames.ST_STACK}
         component={Stations}

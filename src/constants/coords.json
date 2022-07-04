@@ -1,0 +1,122 @@
+[
+  {
+    "coordinate": {
+      "latitude": -1.9379694163815202,
+      "longitude": 30.07199249137946
+    },
+    "key": "foo1",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "CCS Combo T1", "abbrev": "ccs1" },
+    "ratings": ["50KW / DC"],
+    "image": "chargepoint.jpg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9497338351416147,
+      "longitude": 30.075642474258643
+    },
+    "key": "foo2",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "CCS Combo T2", "abbrev": "ccs2" },
+    "ratings": ["50KW / DC"],
+    "image": "chargepoint.jpg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9594918558540115,
+      "longitude": 30.072904987621342
+    },
+    "key": "foo3",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "Type 1", "abbrev": "type1" },
+    "ratings": ["50KW / DC"],
+    "image": "chargepoint.jpg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9586710898843194,
+      "longitude": 30.06295878547641
+    },
+    "key": "foo4",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "Type 2", "abbrev": "type2" },
+    "ratings": ["11KW / AC - THREE PHASES"],
+    "image": "carcharger.jpeg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9550688351826437,
+      "longitude": 30.05520257472986
+    },
+    "key": "foo5",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "Tesla (USa)", "abbrev": "tesla" },
+    "ratings": ["11KW / AC - THREE PHASES"],
+    "image": "carcharger.jpeg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9631354004347093,
+      "longitude": 30.063123565763724
+    },
+    "key": "foo6",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "ratings": ["11KW / AC - THREE PHASES"],
+    "image": "carcharger.jpeg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9341847209318672,
+      "longitude": 30.063095659808255
+    },
+    "key": "foo7",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "ratings": ["55KW / DC"],
+    "image": "carcharger.jpeg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9349143026924054,
+      "longitude": 30.054198828237162
+    },
+    "key": "foo8",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "CCS Combo T2", "abbrev": "ccs2" },
+    "ratings": ["11KW / AC - THREE PHASES"],
+    "image": "carcharger.jpeg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9421188905732691,
+      "longitude": 30.051735090263605
+    },
+    "key": "foo9",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "ratings": ["50KW / DC"],
+    "image": "carcharger.jpeg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.957211950781499,
+      "longitude": 30.049636351204583
+    },
+    "key": "foo10",
+    "name": "KCC Charging Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "ratings": ["62KW / DC"],
+    "image": "carcharger.jpeg"
+  }
+]

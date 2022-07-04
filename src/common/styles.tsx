@@ -15,6 +15,9 @@ export default StyleSheet.create({
   get flexRow() {
     return { flex: 1, ...this.row };
   },
+  get rowBetween() {
+    return { justifyContent: 'space-between', ...this.row };
+  },
 
   mapContainer: {
     ...StyleSheet.absoluteFillObject,
@@ -23,6 +26,7 @@ export default StyleSheet.create({
   },
   map: {
     ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'transparent',
   },
   mapBubble: {
     backgroundColor: 'rgba(255,255,255,0.7)',

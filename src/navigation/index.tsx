@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PrivateNavigator from './Private';
 import PublicNavigator from './Public';
 import constants from '../constants';
+import { StatusBar } from 'react-native';
 
 const { routeNames } = constants;
 
@@ -13,7 +14,20 @@ const AppNavigator = () => {
   const authenticated = true;
   return (
     <NavigationContainer>
-      <MainStack.Navigator>
+      <StatusBar barStyle="light-content" translucent backgroundColor="black" />
+      <MainStack.Navigator
+        screenOptions={{
+          headerTitle: 'Safari Charger',
+          headerStyle: {
+            backgroundColor: 'black',
+          },
+          headerTintColor: 'white',
+          // headerTitleStyle: {
+          //   fontSize: 40,
+          // },
+          // headerLargeTitle: true,
+        }}
+      >
         {authenticated ? (
           <MainStack.Screen
             name={routeNames.PRIVATE}
