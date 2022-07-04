@@ -71,7 +71,8 @@ export default StationList;
 const style = StyleSheet.create({
   container: {
     width: '100%',
-    alignSelf: 'flex-end',
+    position: 'absolute',
+    bottom: 0,
     marginBottom: 10,
   },
   itemContainer: {

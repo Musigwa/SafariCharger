@@ -1,6 +1,12 @@
 import styles from 'common/styles';
 import React, { useState } from 'react';
-import { StyleSheet, useWindowDimensions, View } from 'react-native';
+import {
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import MapView, { Marker, PROVIDER_DEFAULT } from 'react-native-maps';
 import StationList from 'common/components/Cards/StationsList';
 import Icon from 'common/components/Icon';
@@ -83,6 +89,29 @@ const StationsScreen = () => {
         })}
       </MapView>
       <StationList data={stations} />
+      <View style={style.headerExtender}>
+        <View style={style.inputContainer}>
+          <TouchableOpacity activeOpacity={0.7}>
+            <Icon name="search" type="evilicon" color="black" size={30} />
+          </TouchableOpacity>
+          <TextInput
+            placeholder="Search charge station"
+            clearButtonMode="always"
+            style={style.input}
+          />
+          <TouchableOpacity style={style.iconContainer} activeOpacity={0.7}>
+            <Icon name="equalizer" type="fontisto" color="white" size={18} />
+          </TouchableOpacity>
+          <TouchableOpacity style={style.iconContainer} activeOpacity={0.7}>
+            <Icon
+              name="tripadvisor"
+              type="fontawesome"
+              color="white"
+              size={18}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
@@ -103,4 +132,25 @@ const style = StyleSheet.create({
     borderRadius: 50,
     padding: 8,
   },
+  iconContainer: { backgroundColor: 'black', borderRadius: 6, padding: 4 },
+  headerExtender: {
+    alignSelf: 'flex-start',
+    backgroundColor: 'black',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    paddingTop: 10,
+  },
+  inputContainer: {
+    position: 'relative',
+    ...styles.rowBetween,
+    bottom: -25,
+    backgroundColor: 'white',
+    height: 50,
+    width: '100%',
+    borderRadius: 10,
+    paddingHorizontal: 8,
+  },
+  input: { fontSize: 16, width: '65%', paddingVertical: 10 },
 });

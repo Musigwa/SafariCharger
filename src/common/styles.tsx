@@ -21,8 +21,6 @@ export default StyleSheet.create({
 
   mapContainer: {
     ...StyleSheet.absoluteFillObject,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
   },
   map: {
     ...StyleSheet.absoluteFillObject,

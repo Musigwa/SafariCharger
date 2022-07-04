@@ -22,23 +22,21 @@ const AppNavigator = () => {
             backgroundColor: 'black',
           },
           headerTintColor: 'white',
-          // headerTitleStyle: {
-          //   fontSize: 40,
-          // },
-          // headerLargeTitle: true,
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontSize: 20,
+          },
         }}
       >
         {authenticated ? (
           <MainStack.Screen
             name={routeNames.PRIVATE}
             component={PrivateNavigator}
-            options={{ header: () => null }}
           />
         ) : (
           <MainStack.Screen
             name={routeNames.PUBLIC}
             component={PublicNavigator}
-            options={{ header: () => null }}
           />
         )}
       </MainStack.Navigator>

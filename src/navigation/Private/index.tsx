@@ -2,11 +2,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'common/components/Icon';
 import React from 'react';
 import constants from '../../constants';
-import ChargeStation from './Chargers';
 import ChargeStack from './ChargeUp';
 import ProfileStack from './Profile';
 import Stations from './Stations';
-import SwapStation from './Swaps';
 
 const { routeNames } = constants;
 const BottomTab = createBottomTabNavigator();
@@ -43,33 +41,12 @@ const PrivateNavigator = () => {
             <Icon name={iconName} size={size} color={color} type={iconType} />
           );
         },
+        header: () => null,
       })}
     >
-      <BottomTab.Screen
-        name={routeNames.ST_STACK}
-        component={Stations}
-        options={{ header: () => null }}
-      />
-      <BottomTab.Screen
-        name={routeNames.SW_STACK}
-        component={SwapStation}
-        options={{ header: () => null }}
-      />
-      <BottomTab.Screen
-        name={routeNames.CH_STACK}
-        component={ChargeStation}
-        options={{ header: () => null }}
-      />
-      <BottomTab.Screen
-        name={routeNames.CHG_STACK}
-        component={ChargeStack}
-        options={{ header: () => null }}
-      />
-      <BottomTab.Screen
-        name={routeNames.PR_STACK}
-        component={ProfileStack}
-        options={{ header: () => null }}
-      />
+      <BottomTab.Screen name={routeNames.ST_STACK} component={Stations} />
+      <BottomTab.Screen name={routeNames.CHG_STACK} component={ChargeStack} />
+      <BottomTab.Screen name={routeNames.PR_STACK} component={ProfileStack} />
     </BottomTab.Navigator>
   );
 };

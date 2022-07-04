@@ -10,8 +10,12 @@ const Stack = createNativeStackNavigator();
 
 const Stations = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name={routeNames.STATIONS} component={StationsScreen} />
+    <Stack.Navigator screenOptions={{ header: () => null }}>
+      <Stack.Screen
+        name={routeNames.STATIONS}
+        component={StationsScreen}
+        options={{ header: () => null }}
+      />
       <Stack.Screen
         name={routeNames.STDETAILS}
         component={StationDetailsScreen}

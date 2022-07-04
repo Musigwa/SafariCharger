@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const ChargeStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ header: () => null }}>
       <Stack.Screen name={routeNames.CHARGE} component={ChargeScreen} />
     </Stack.Navigator>
   );

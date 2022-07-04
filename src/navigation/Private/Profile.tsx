@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const ProfileStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ header: () => null }}>
       <Stack.Screen name={routeNames.Profile} component={ChargeScreen} />
     </Stack.Navigator>
   );

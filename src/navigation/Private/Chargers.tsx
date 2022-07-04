@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 
 const ChargeStation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ header: () => null }}>
       <Stack.Screen name={routeNames.CHARGERS} component={SwapsScreen} />
       <Stack.Screen
         name={routeNames.STDETAILS}

@@ -55,15 +55,15 @@ type IconType = {
   color: string | number;
   type?: string;
 };
-export const Icon = (props: IconType) => {
+export const Icon = (props: IconType & any) => {
   const {
     size = 25,
-    color,
     name = 'exclamation',
     type = 'materialcommunity',
+    ...rest
   } = props;
   const FontIcon = getIconType(type);
-  return <FontIcon size={size} name={name} color={color} />;
+  return <FontIcon size={size} name={name} {...rest} />;
 };
 
 export default Icon;

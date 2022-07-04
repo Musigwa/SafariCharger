@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 
 const SwapStation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ header: () => null }}>
       <Stack.Screen name={routeNames.SWAPS} component={SwapsScreen} />
       <Stack.Screen
         name={routeNames.STDETAILS}
