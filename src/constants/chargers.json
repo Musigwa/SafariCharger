@@ -9,7 +9,7 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "CCS Combo T1", "abbrev": "ccs1" },
     "ratings": ["50KW / DC"],
-    "image": "chargepoint.jpg"
+    "image": "https://images.unsplash.com/photo-1650452233063-8f308616b729?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
   },
   {
     "coordinate": {
@@ -21,7 +21,7 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "CCS Combo T2", "abbrev": "ccs2" },
     "ratings": ["50KW / DC"],
-    "image": "chargepoint.jpg"
+    "image": "https://images.unsplash.com/photo-1600490819354-98806f3dbe47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
   },
   {
     "coordinate": {
@@ -33,7 +33,7 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "Type 1", "abbrev": "type1" },
     "ratings": ["50KW / DC"],
-    "image": "chargepoint.jpg"
+    "image": "https://cdn.corporate.walmart.com/dims4/WMT/b0af564/2147483647/strip/true/crop/1656x1080+107+0/resize/1840x1200!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2Fb0%2F63%2F54aa9b6f471e8821f2812daa4fb5%2Fevpstation-banner.jpg"
   },
   {
     "coordinate": {
@@ -55,9 +55,9 @@
     "key": "foo5",
     "name": "KCC Charging Station",
     "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "Tesla (USa)", "abbrev": "tesla" },
+    "connector": { "name": "Tesla (USA)", "abbrev": "tesla" },
     "ratings": ["11KW / AC - THREE PHASES"],
-    "image": "carcharger.jpeg"
+    "image": "https://www.afrik21.africa/wp-content/uploads/2022/03/shutterstock_1503415649-1-800x400.jpg"
   },
   {
     "coordinate": {
@@ -69,7 +69,7 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "CHADEMO", "abbrev": "chademo" },
     "ratings": ["11KW / AC - THREE PHASES"],
-    "image": "carcharger.jpeg"
+    "image": "https://newsroom.gy/wp-content/uploads/2022/04/electric-vehicle-charging-stations-750x430.jpg"
   },
   {
     "coordinate": {
@@ -81,7 +81,7 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "CHADEMO", "abbrev": "chademo" },
     "ratings": ["55KW / DC"],
-    "image": "carcharger.jpeg"
+    "image": "https://site-assets.evgo.com/f/78437/1540x700/cbc2969ed8/cities_page_figure_image_chargingrow.jpg"
   },
   {
     "coordinate": {
@@ -93,7 +93,7 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "CCS Combo T2", "abbrev": "ccs2" },
     "ratings": ["11KW / AC - THREE PHASES"],
-    "image": "carcharger.jpeg"
+    "image": "https://site-assets.evgo.com/f/78437/1540x700/cbc2969ed8/cities_page_figure_image_chargingrow.jpg"
   },
   {
     "coordinate": {
@@ -105,7 +105,7 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "CHADEMO", "abbrev": "chademo" },
     "ratings": ["50KW / DC"],
-    "image": "carcharger.jpeg"
+    "image": "https://images.unsplash.com/photo-1650452233063-8f308616b729?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
   },
   {
     "coordinate": {
@@ -117,6 +117,6 @@
     "location": "KG 2, Roundabout Kigali",
     "connector": { "name": "CHADEMO", "abbrev": "chademo" },
     "ratings": ["62KW / DC"],
-    "image": "carcharger.jpeg"
+    "image": "https://images.unsplash.com/photo-1650452233063-8f308616b729?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
   }
 ]

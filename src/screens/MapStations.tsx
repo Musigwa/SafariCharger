@@ -1,3 +1,6 @@
+import CardModal from 'common/components/Cards/Modal';
+import StationList from 'common/components/Cards/StationsList';
+import Icon from 'common/components/Icon';
 import styles from 'common/styles';
 import React, { useState } from 'react';
 import {
@@ -8,9 +11,7 @@ import {
   View,
 } from 'react-native';
 import MapView, { Marker, PROVIDER_DEFAULT } from 'react-native-maps';
-import StationList from 'common/components/Cards/StationsList';
-import Icon from 'common/components/Icon';
-import stations from '../constants/coords.json';
+import stations from '../constants/chargers.json';
 
 type CoordsType = {
   latitude: number;
@@ -25,6 +26,9 @@ type MarkerType = {
 };
 
 const StationsScreen = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selected, setSelected] = useState<MarkerType>();
+
   const { height, width } = useWindowDimensions();
   const ASPECT_RATIO = width / height;
   const initialRegion = {
@@ -38,6 +42,12 @@ const StationsScreen = () => {
 
   const [position] = useState(initialRegion);
   const [markers] = useState<MarkerType[]>(stations);
+  const flexValue = 0.68;
+
+  const toggleModal = (item: any) => {
+    setSelected(item);
+    setShowModal(!showModal);
+  };
 
   return (
     <View style={styles.mapContainer}>
@@ -88,7 +98,6 @@ const StationsScreen = () => {
           );
         })}
       </MapView>
-      <StationList data={stations} />
       <View style={style.headerExtender}>
         <View style={style.inputContainer}>
           <TouchableOpacity activeOpacity={0.7}>
@@ -112,6 +121,13 @@ const StationsScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
+      <StationList data={stations} onItemPress={toggleModal} />
+      <CardModal
+        flexValue={flexValue}
+        isOpen={showModal}
+        onPress={toggleModal}
+        item={selected}
+      />
     </View>
   );
 };
@@ -140,7 +156,6 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 10,
-    paddingTop: 10,
   },
   inputContainer: {
     position: 'relative',

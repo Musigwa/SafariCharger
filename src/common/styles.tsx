@@ -47,4 +47,32 @@ export default StyleSheet.create({
     marginVertical: 20,
     backgroundColor: 'transparent',
   },
+
+  itemContainer: {
+    backgroundColor: 'white',
+    padding: 10,
+    marginHorizontal: 10,
+    borderRadius: 8,
+  },
+  item: {
+    marginHorizontal: 10,
+  },
+  title: {
+    fontSize: 14,
+    color: 'black',
+    marginBottom: 5,
+    marginLeft: 5,
+  },
+  description: {
+    fontSize: 12,
+    color: 'gray',
+  },
+  get iconContainer() {
+    return {
+      backgroundColor: 'black',
+      ...this.center,
+      borderRadius: 50,
+      padding: 8,
+    };
+  },
 });

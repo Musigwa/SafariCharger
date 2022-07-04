@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Icon from '../Icon';
 
-const StationList = ({ data }: any) => {
+const StationList = ({ data, onItemPress }: any) => {
   return (
     <View style={style.container}>
       <FlatList
@@ -18,17 +18,26 @@ const StationList = ({ data }: any) => {
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <TouchableOpacity activeOpacity={0.7} style={style.itemContainer}>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={styles.itemContainer}
+            onPress={() => onItemPress(item)}
+          >
             <View style={[styles.rowBetween, { marginBottom: 8 }]}>
-              <Image
-                source={require('assets/img/chargepoint.jpg')}
-                style={style.image}
-              />
-              <View style={style.item}>
-                <Text style={style.title}>{item.name}</Text>
-                <Text style={style.description}>{item.location}</Text>
+              <Image source={{ uri: item.image }} style={style.image} />
+              <View style={styles.item}>
+                <Text style={styles.title}>{item.name}</Text>
+                <View style={styles.rowBetween}>
+                  <Icon
+                    name="location"
+                    type="evilicon"
+                    size={18}
+                    color="black"
+                  />
+                  <Text style={styles.description}>{item.location}</Text>
+                </View>
               </View>
-              <View style={style.iconContainer}>
+              <View style={styles.iconContainer}>
                 <Icon
                   name="arrow-right-top"
                   type="materialcommunity"
@@ -75,34 +84,10 @@ const style = StyleSheet.create({
     bottom: 0,
     marginBottom: 10,
   },
-  itemContainer: {
-    backgroundColor: 'white',
-    padding: 10,
-    marginHorizontal: 10,
-    borderRadius: 8,
-  },
-  item: {
-    marginHorizontal: 15,
-  },
   image: {
     width: 60,
     height: 50,
     borderRadius: 5,
-  },
-  title: {
-    fontSize: 14,
-    color: 'black',
-    marginBottom: 5,
-  },
-  description: {
-    fontSize: 12,
-    color: 'gray',
-  },
-  iconContainer: {
-    backgroundColor: 'black',
-    ...styles.center,
-    borderRadius: 50,
-    padding: 8,
   },
   badgeContainer: {
     padding: 5,
