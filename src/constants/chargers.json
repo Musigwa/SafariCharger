@@ -1,54 +1,6 @@
 [
   {
     "coordinate": {
-      "latitude": -1.9379694163815202,
-      "longitude": 30.07199249137946
-    },
-    "key": "foo1",
-    "name": "KCC Charging Station",
-    "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "CCS Combo T1", "abbrev": "ccs1" },
-    "ratings": ["50KW / DC"],
-    "image": "https://images.unsplash.com/photo-1650452233063-8f308616b729?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
-  },
-  {
-    "coordinate": {
-      "latitude": -1.9497338351416147,
-      "longitude": 30.075642474258643
-    },
-    "key": "foo2",
-    "name": "KCC Charging Station",
-    "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "CCS Combo T2", "abbrev": "ccs2" },
-    "ratings": ["50KW / DC"],
-    "image": "https://images.unsplash.com/photo-1600490819354-98806f3dbe47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
-  },
-  {
-    "coordinate": {
-      "latitude": -1.9594918558540115,
-      "longitude": 30.072904987621342
-    },
-    "key": "foo3",
-    "name": "KCC Charging Station",
-    "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "Type 1", "abbrev": "type1" },
-    "ratings": ["50KW / DC"],
-    "image": "https://cdn.corporate.walmart.com/dims4/WMT/b0af564/2147483647/strip/true/crop/1656x1080+107+0/resize/1840x1200!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2Fb0%2F63%2F54aa9b6f471e8821f2812daa4fb5%2Fevpstation-banner.jpg"
-  },
-  {
-    "coordinate": {
-      "latitude": -1.9586710898843194,
-      "longitude": 30.06295878547641
-    },
-    "key": "foo4",
-    "name": "KCC Charging Station",
-    "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "Type 2", "abbrev": "type2" },
-    "ratings": ["11KW / AC - THREE PHASES"],
-    "image": "carcharger.jpeg"
-  },
-  {
-    "coordinate": {
       "latitude": -1.9550688351826437,
       "longitude": 30.05520257472986
     },

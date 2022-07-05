@@ -26,8 +26,14 @@ const StationList = ({ data, onItemPress }: any) => {
             <View style={[styles.rowBetween, { marginBottom: 8 }]}>
               <Image source={{ uri: item.image }} style={style.image} />
               <View style={styles.item}>
-                <Text style={styles.title}>{item.name}</Text>
-                <View style={styles.rowBetween}>
+                <Text
+                  style={[styles.title, { maxWidth: 150 }]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {item.name}
+                </Text>
+                <View style={styles.row}>
                   <Icon
                     name="location"
                     type="evilicon"
@@ -48,7 +54,11 @@ const StationList = ({ data, onItemPress }: any) => {
             </View>
             <View style={styles.rowBetween}>
               <Icon
-                name={`ev-plug-${item.connector.abbrev}`}
+                name={
+                  item.key.includes('bar')
+                    ? 'car-battery'
+                    : `ev-plug-${item.connector.abbrev}`
+                }
                 type="materialcommunity"
                 size={28}
                 color="black"

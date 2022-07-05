@@ -1,0 +1,50 @@
+[
+  {
+    "coordinate": {
+      "latitude": -1.9379694163815202,
+      "longitude": 30.07199249137946
+    },
+    "key": "bar1",
+    "name": "Amperand Rwandex Swap Station",
+    "location": "23VV+MQ9, Kigali",
+    "connector": { "name": "Lithium Ion", "abbrev": "Li-ion" },
+    "ratings": ["80 KM"],
+    "image": "https://ceobusinessafrica.com/wp-content/uploads/2022/06/ampersand-scaled.jpg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9497338351416147,
+      "longitude": 30.075642474258643
+    },
+    "key": "bar2",
+    "name": "Amperand Nyabugogo Swap Station",
+    "location": "CAMP KIGALI, KN 3 Ave, Kigali",
+    "connector": { "name": "Lithium Ion", "abbrev": "Li-ion" },
+    "ratings": ["120 KM"],
+    "image": "https://ceobusinessafrica.com/wp-content/uploads/2022/06/ampersand-scaled.jpg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9594918558540115,
+      "longitude": 30.072904987621342
+    },
+    "key": "bar3",
+    "name": "Amperand Remera Swap Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "Alcarine", "abbrev": "Alc" },
+    "ratings": ["50 KM"],
+    "image": "https://ceobusinessafrica.com/wp-content/uploads/2022/06/ampersand-scaled.jpg"
+  },
+  {
+    "coordinate": {
+      "latitude": -1.9586710898843194,
+      "longitude": 30.06295878547641
+    },
+    "key": "bar4",
+    "name": "Amperand Ruyenzi Swap Station",
+    "location": "KG 2, Roundabout Kigali",
+    "connector": { "name": "Mercury free", "abbrev": "Hg free" },
+    "ratings": ["90 KM"],
+    "image": "https://ceobusinessafrica.com/wp-content/uploads/2022/06/ampersand-scaled.jpg"
+  }
+]

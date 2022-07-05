@@ -11,7 +11,8 @@ import {
   View,
 } from 'react-native';
 import MapView, { Marker, PROVIDER_DEFAULT } from 'react-native-maps';
-import stations from '../constants/chargers.json';
+import chargers from '../constants/chargers.json';
+import swaps from '../constants/swaps.json';
 
 type CoordsType = {
   latitude: number;
@@ -27,7 +28,7 @@ type MarkerType = {
 
 const StationsScreen = () => {
   const [showModal, setShowModal] = useState(false);
-  const [selected, setSelected] = useState<MarkerType>();
+  const [selected, setSelected] = useState<MarkerType>(chargers[0]);
 
   const { height, width } = useWindowDimensions();
   const ASPECT_RATIO = width / height;
@@ -41,13 +42,14 @@ const StationsScreen = () => {
   };
 
   const [position] = useState(initialRegion);
-  const [markers] = useState<MarkerType[]>(stations);
   const flexValue = 0.68;
 
   const toggleModal = (item: any) => {
     setSelected(item);
     setShowModal(!showModal);
   };
+
+  const data = chargers.concat(swaps);
 
   return (
     <View style={styles.mapContainer}>
@@ -77,18 +79,20 @@ const StationsScreen = () => {
             </View>
           </Marker>
         )}
-        {markers.map(({ coordinate, key }, id) => {
-          const { latitude, longitude } = coordinate;
+        {data.map(item => {
+          const { latitude, longitude } = item.coordinate;
+          const isSwap = item.key?.includes('bar');
           return (
             <Marker
-              key={key}
-              title={key}
-              coordinate={coordinate}
+              key={item.key}
+              title={item.key}
+              coordinate={item.coordinate}
               description={`${latitude.toFixed(2)}, ${longitude.toFixed(2)}`}
+              onCalloutPress={() => toggleModal(item)}
             >
               <View style={style.markerContainer}>
                 <Icon
-                  name={id % 2 ? 'ev-station' : 'car-battery'}
+                  name={isSwap ? 'car-battery' : 'ev-station'}
                   type="materialcommunity"
                   size={20}
                   color="white"
@@ -121,7 +125,7 @@ const StationsScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <StationList data={stations} onItemPress={toggleModal} />
+      <StationList data={data} onItemPress={toggleModal} />
       <CardModal
         flexValue={flexValue}
         isOpen={showModal}

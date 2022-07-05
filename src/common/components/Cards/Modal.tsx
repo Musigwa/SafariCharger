@@ -11,6 +11,8 @@ type ModalType = {
 
 const CardModal = ({ flexValue, onPress, item, isOpen }: ModalType) => {
   const { absoluteFill } = StyleSheet;
+  const isSwap = item.key?.includes('bar');
+
   return isOpen ? (
     <View style={[style.container, absoluteFill]}>
       <TouchableOpacity
@@ -46,7 +48,7 @@ const CardModal = ({ flexValue, onPress, item, isOpen }: ModalType) => {
         </View>
         <View style={style.bannerContainer}>
           <Icon
-            name={`ev-plug-${item.connector.abbrev}`}
+            name={isSwap ? 'car-battery' : `ev-plug-${item.connector.abbrev}`}
             type="materialcommunity"
             size={50}
             color="black"
@@ -63,12 +65,14 @@ const CardModal = ({ flexValue, onPress, item, isOpen }: ModalType) => {
           </View>
           <View style={styles.center}>
             <Text style={style.bannerMiddleTitle}>500 RWF</Text>
-            <Text style={style.bannerMiddleDesc}>Per Kwh</Text>
+            <Text style={style.bannerMiddleDesc}>
+              Per {isSwap ? '100%' : 'Kwh'}
+            </Text>
           </View>
         </View>
 
         <TouchableOpacity activeOpacity={0.8} style={style.btnContainer}>
-          <Text style={style.btnText}>BOOK CHARGER</Text>
+          <Text style={style.btnText}>BOOK {isSwap ? 'SWAP' : 'CHARGER'}</Text>
         </TouchableOpacity>
       </View>
     </View>
