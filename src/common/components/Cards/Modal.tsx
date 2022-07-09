@@ -1,6 +1,14 @@
 import styles from 'common/styles';
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+  Platform,
+} from 'react-native';
 import Icon from '../Icon';
 
 type ModalType = {
@@ -12,6 +20,9 @@ type ModalType = {
 const CardModal = ({ flexValue, onPress, item, isOpen }: ModalType) => {
   const { absoluteFill } = StyleSheet;
   const isSwap = item.key?.includes('bar');
+
+  if (Platform.OS === 'android') {
+  }
 
   return isOpen ? (
     <View style={[style.container, absoluteFill]}>
@@ -54,13 +65,15 @@ const CardModal = ({ flexValue, onPress, item, isOpen }: ModalType) => {
             color="black"
           />
           <View style={[styles.center, style.bannerMiddle]}>
-            <Text style={style.bannerMiddleTitle}>{item.connector.name}</Text>
+            <Text style={style.bannerMiddleTitle}>
+              {item.connector.name}, 100Ah
+            </Text>
             <Text
               style={style.bannerMiddleDesc}
               numberOfLines={1}
               ellipsizeMode="tail"
             >
-              {item.ratings[0]}
+              Mileage: {item.ratings[0]}
             </Text>
           </View>
           <View style={styles.center}>
@@ -70,9 +83,10 @@ const CardModal = ({ flexValue, onPress, item, isOpen }: ModalType) => {
             </Text>
           </View>
         </View>
-
         <TouchableOpacity activeOpacity={0.8} style={style.btnContainer}>
-          <Text style={style.btnText}>BOOK {isSwap ? 'SWAP' : 'CHARGER'}</Text>
+          <Text style={style.btnText}>
+            BOOK {isSwap ? 'BATTERY' : 'CHARGER'}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -138,3 +152,9 @@ const style = StyleSheet.create({
 });
 
 export default CardModal;
+
+// Javascript/Typescript: Mobile Apps (cross-platform), App services, Web Apps
+// Java: Android apps, App services
+// Dart: Mobile Apps (cross-platform), App services, Web
+// C++, C#, Golang
+// Python: Apps services

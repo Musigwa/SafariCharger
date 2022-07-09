@@ -16,5 +16,6 @@ export default {
     ST_STACK: 'Maps',
     SW_STACK: 'Swaps',
     CH_STACK: 'Chargers',
+    PLAN: 'Plan',
   },
 };

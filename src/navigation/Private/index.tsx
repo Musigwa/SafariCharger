@@ -3,6 +3,7 @@ import Icon from 'common/components/Icon';
 import React from 'react';
 import constants from '../../constants';
 import ChargeStack from './ChargeUp';
+import RoutePlanner from './Planner';
 import ProfileStack from './Profile';
 import Stations from './Stations';
 
@@ -30,6 +31,10 @@ const PrivateNavigator = () => {
               iconName = 'flash';
               iconType = 'entypo';
               break;
+            case routeNames.PLAN:
+              iconName = 'route';
+              iconType = 'fontawesome5';
+              break;
             case routeNames.PR_STACK:
               iconName = 'person';
               iconType = 'octicons';
@@ -45,6 +50,7 @@ const PrivateNavigator = () => {
       })}
     >
       <BottomTab.Screen name={routeNames.ST_STACK} component={Stations} />
+      <BottomTab.Screen name={routeNames.PLAN} component={RoutePlanner} />
       <BottomTab.Screen name={routeNames.CHG_STACK} component={ChargeStack} />
       <BottomTab.Screen name={routeNames.PR_STACK} component={ProfileStack} />
     </BottomTab.Navigator>

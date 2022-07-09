@@ -3,7 +3,7 @@ import React from 'react';
 import constants from '../../constants';
 
 import StationDetailsScreen from 'screens/StationDetails';
-import SwapsScreen from 'screens/SwapStations';
+import SwapsScreen from 'screens/RoutePlan';
 
 const { routeNames } = constants;
 const Stack = createNativeStackNavigator();

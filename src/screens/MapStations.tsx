@@ -115,14 +115,6 @@ const StationsScreen = () => {
           <TouchableOpacity style={style.iconContainer} activeOpacity={0.7}>
             <Icon name="equalizer" type="fontisto" color="white" size={18} />
           </TouchableOpacity>
-          <TouchableOpacity style={style.iconContainer} activeOpacity={0.7}>
-            <Icon
-              name="tripadvisor"
-              type="fontawesome"
-              color="white"
-              size={18}
-            />
-          </TouchableOpacity>
         </View>
       </View>
       <StationList data={data} onItemPress={toggleModal} />
