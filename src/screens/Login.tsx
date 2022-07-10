@@ -7,8 +7,17 @@ import {
 } from 'react-native';
 import React from 'react';
 import styles from 'common/styles';
+import { useNavigation } from '@react-navigation/native';
+import constants from '../constants';
 
+const { routeNames } = constants;
 const LoginScreen = () => {
+  const { navigate } = useNavigation();
+
+  const handleLogin = () => {
+    navigate(routeNames.PROFILE);
+  };
+
   return (
     <View style={style.container}>
       <View style={style.topBanner} />
@@ -26,7 +35,11 @@ const LoginScreen = () => {
             style={style.input}
           />
         </View>
-        <TouchableOpacity activeOpacity={0.8} style={style.btnContainer}>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          style={style.btnContainer}
+          onPress={handleLogin}
+        >
           <Text style={style.btnText}>Login</Text>
         </TouchableOpacity>
       </View>

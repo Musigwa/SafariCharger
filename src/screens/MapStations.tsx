@@ -1,5 +1,5 @@
-import CardModal from 'common/components/Cards/Modal';
-import StationList from 'common/components/Cards/StationsList';
+import CardModal from 'common/components/Card/Modal';
+import StationList from 'common/components/Card/StationsList';
 import Icon from 'common/components/Icon';
 import styles from 'common/styles';
 import React, { useState } from 'react';

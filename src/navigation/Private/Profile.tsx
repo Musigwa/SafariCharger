@@ -12,7 +12,7 @@ const ProfileStack = () => {
   return (
     <Stack.Navigator screenOptions={{ header: () => null }}>
       <Stack.Screen name={routeNames.LOGIN} component={LoginScreen} />
-      <Stack.Screen name={routeNames.Profile} component={ChargeScreen} />
+      <Stack.Screen name={routeNames.PROFILE} component={ChargeScreen} />
     </Stack.Navigator>
   );
 };

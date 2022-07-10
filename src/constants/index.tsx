@@ -9,7 +9,7 @@ export default {
     LOGIN: 'Login',
     SINGUP: 'Signup',
     ONBOARDING: 'Onboarding',
-    Profile: 'UserProfile',
+    PROFILE: 'UserProfile',
     PR_STACK: 'Profile',
     CHARGE: 'ChargeUp',
     CHG_STACK: 'Charge',
