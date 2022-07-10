@@ -1,14 +1,6 @@
 import styles from 'common/styles';
 import React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  Platform,
-} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Icon from '../Icon';
 
 type ModalType = {
@@ -20,9 +12,6 @@ type ModalType = {
 const CardModal = ({ flexValue, onPress, item, isOpen }: ModalType) => {
   const { absoluteFill } = StyleSheet;
   const isSwap = item.key?.includes('bar');
-
-  if (Platform.OS === 'android') {
-  }
 
   return isOpen ? (
     <View style={[style.container, absoluteFill]}>

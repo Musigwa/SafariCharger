@@ -55,6 +55,7 @@ type IconType = {
   color: string | number;
   type?: string;
 };
+
 export const Icon = (props: IconType & any) => {
   const {
     size = 25,

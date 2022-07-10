@@ -3,6 +3,7 @@ import React from 'react';
 import constants from '../../constants';
 
 import ChargeScreen from 'screens/Charge';
+import LoginScreen from 'screens/Login';
 
 const { routeNames } = constants;
 const Stack = createNativeStackNavigator();
@@ -10,6 +11,7 @@ const Stack = createNativeStackNavigator();
 const ProfileStack = () => {
   return (
     <Stack.Navigator screenOptions={{ header: () => null }}>
+      <Stack.Screen name={routeNames.LOGIN} component={LoginScreen} />
       <Stack.Screen name={routeNames.Profile} component={ChargeScreen} />
     </Stack.Navigator>
   );
