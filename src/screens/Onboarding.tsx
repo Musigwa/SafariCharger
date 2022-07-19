@@ -9,6 +9,7 @@ import Onboarding from 'react-native-onboarding-swiper';
 
 import { useNavigation } from '@react-navigation/native';
 import constants from '../constants';
+import { useAppDispatch } from 'container/hooks';
 
 const { routeNames } = constants;
 
@@ -71,15 +72,31 @@ const OnboardingScreen = () => {
           <ImgWrapper style={{ width }}>
             <Image
               source={data[id - 1]?.image}
-              style={[style.image, { width: 80 }]}
+              style={[
+                style.image,
+                {
+                  width: '20%',
+                  height: 180,
+                  borderBottomLeftRadius: 0,
+                  borderTopLeftRadius: 0,
+                },
+              ]}
             />
             <Image
               source={it.image}
-              style={[style.image, { marginHorizontal: 30 }]}
+              style={[style.image, { marginHorizontal: 20, width: '50%' }]}
             />
             <Image
               source={data[id + 1]?.image}
-              style={[style.image, { width: 80 }]}
+              style={[
+                style.image,
+                {
+                  width: '20%',
+                  height: 180,
+                  borderBottomRightRadius: 0,
+                  borderTopRightRadius: 0,
+                },
+              ]}
             />
           </ImgWrapper>
         ),

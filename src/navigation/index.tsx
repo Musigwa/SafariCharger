@@ -5,13 +5,14 @@ import PrivateNavigator from './Private';
 import PublicNavigator from './Public';
 import constants from '../constants';
 import { StatusBar } from 'react-native';
+import { useAppSelector } from 'container/hooks';
 
 const { routeNames } = constants;
 
 const MainStack = createNativeStackNavigator();
 
 const AppNavigator = () => {
-  const authenticated = false;
+  const { authenticated } = useAppSelector(state => state.user);
   return (
     <NavigationContainer>
       <StatusBar barStyle="light-content" translucent backgroundColor="black" />

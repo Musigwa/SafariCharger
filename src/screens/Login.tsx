@@ -9,13 +9,15 @@ import React from 'react';
 import styles from 'common/styles';
 import { useNavigation } from '@react-navigation/native';
 import constants from '../constants';
+import { useAppDispatch } from 'container/hooks';
+import { dispatchLogin } from 'container/reducers/user';
 
 const { routeNames } = constants;
 const LoginScreen = () => {
   const { navigate } = useNavigation();
-
+  const dispatch = useAppDispatch();
   const handleLogin = () => {
-    navigate(routeNames.PROFILE);
+    dispatch(dispatchLogin());
   };
 
   return (

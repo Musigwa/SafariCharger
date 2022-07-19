@@ -1,12 +1,11 @@
-import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import constants from '../../constants';
-import OnboardingScreen from 'screens/Onboarding';
+import React from 'react';
 import LoginScreen from 'screens/Login';
+import OnboardingScreen from 'screens/Onboarding';
 import SingupScreen from 'screens/Singup';
+import constants from '../../constants';
 
 const { routeNames } = constants;
-
 const PublicStack = createNativeStackNavigator();
 
 const PublicNavigator = () => {
