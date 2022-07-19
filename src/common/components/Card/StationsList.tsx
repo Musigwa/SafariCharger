@@ -13,6 +13,22 @@ import Icon from '../Icon';
 const StationList = ({ data, onItemPress }: any) => {
   return (
     <View style={style.container}>
+      {/* <View
+        style={{
+          backgroundColor: 'rgba(42,110,232,1)',
+          alignSelf: 'center',
+          overflow: 'hidden',
+          width: 90,
+          height: 45,
+          borderTopRightRadius: 100,
+          borderTopLeftRadius: 100,
+          paddingTop: 15,
+          ...styles.center,
+        }}
+      >
+        <Icon name="plus" color="white" />
+      </View> */}
+      {/* <Ripple /> */}
       <FlatList
         data={data}
         horizontal
@@ -64,7 +80,7 @@ const StationList = ({ data, onItemPress }: any) => {
                 color="black"
               />
               <View>
-                <Text style={style.conector}>{item.connector.name}</Text>
+                <Text style={style.connector}>{item.connector.name}</Text>
                 <Text
                   ellipsizeMode="tail"
                   numberOfLines={1}
@@ -102,7 +118,7 @@ const style = StyleSheet.create({
   badgeContainer: {
     padding: 5,
     borderRadius: 5,
-    backgroundColor: 'green',
+    backgroundColor: 'rgba(37, 196, 12,1)',
   },
   statusBadge: {
     textTransform: 'capitalize',
@@ -111,5 +127,5 @@ const style = StyleSheet.create({
     fontSize: 12,
   },
   chargeCap: { color: 'black', fontWeight: '700', maxWidth: 150 },
-  conector: { textTransform: 'capitalize', color: 'gray' },
+  connector: { textTransform: 'capitalize', color: 'gray' },
 });

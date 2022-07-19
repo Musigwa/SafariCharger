@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SafariChargerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SafariChargerTests.m */; };
+		13010A62DC38A13A5E366AE9 /* libPods-SafariCharger-SafariChargerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9091AABFDC4D860F59D8E1 /* libPods-SafariCharger-SafariChargerTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -28,8 +29,7 @@
 		8EB33514287309DA0091C7EF /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB33504287309DA0091C7EF /* EvilIcons.ttf */; };
 		8EB33515287309DA0091C7EF /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB33505287309DA0091C7EF /* SimpleLineIcons.ttf */; };
 		8EB33516287309DA0091C7EF /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB33506287309DA0091C7EF /* MaterialIcons.ttf */; };
-		B50518D57027C1A80F5FDCA5 /* libPods-SafariCharger-SafariChargerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56860C5EA01689D4FB94CA2A /* libPods-SafariCharger-SafariChargerTests.a */; };
-		B6D5B29CD2AA7C54ADD77322 /* libPods-SafariCharger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C3953F8C433FC4A48775B /* libPods-SafariCharger.a */; };
+		9A001684379ACA618AEA809F /* libPods-SafariCharger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1309CFA260A8167FC272F95 /* libPods-SafariCharger.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,18 +46,14 @@
 		00E356EE1AD99517003FC87E /* SafariChargerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafariChargerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SafariChargerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafariChargerTests.m; sourceTree = "<group>"; };
-		059348A20C81C9A283160979 /* Pods-SafariCharger-SafariChargerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger-SafariChargerTests.debug.xcconfig"; path = "Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SafariCharger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafariCharger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SafariCharger/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = SafariCharger/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SafariCharger/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SafariCharger/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SafariCharger/main.m; sourceTree = "<group>"; };
-		47DC98B80CD4FFAF4729DB58 /* Pods-SafariCharger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger.debug.xcconfig"; path = "Target Support Files/Pods-SafariCharger/Pods-SafariCharger.debug.xcconfig"; sourceTree = "<group>"; };
-		56860C5EA01689D4FB94CA2A /* libPods-SafariCharger-SafariChargerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafariCharger-SafariChargerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6465076BDFAE1624F8087921 /* Pods-SafariCharger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger.release.xcconfig"; path = "Target Support Files/Pods-SafariCharger/Pods-SafariCharger.release.xcconfig"; sourceTree = "<group>"; };
+		6B1AAF1D58E361F5136FDC27 /* Pods-SafariCharger-SafariChargerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger-SafariChargerTests.release.xcconfig"; path = "Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SafariCharger/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82943CECDCAFA7482389790E /* Pods-SafariCharger-SafariChargerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger-SafariChargerTests.release.xcconfig"; path = "Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests.release.xcconfig"; sourceTree = "<group>"; };
 		8EB334F7287309DA0091C7EF /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		8EB334F8287309DA0091C7EF /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		8EB334F9287309DA0091C7EF /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -74,7 +70,11 @@
 		8EB33504287309DA0091C7EF /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		8EB33505287309DA0091C7EF /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		8EB33506287309DA0091C7EF /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		BE3C3953F8C433FC4A48775B /* libPods-SafariCharger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafariCharger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD4A7234E7F2C0F280E54F7E /* Pods-SafariCharger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger.release.xcconfig"; path = "Target Support Files/Pods-SafariCharger/Pods-SafariCharger.release.xcconfig"; sourceTree = "<group>"; };
+		B42DFBA01A2E0F8AD71546CE /* Pods-SafariCharger-SafariChargerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger-SafariChargerTests.debug.xcconfig"; path = "Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF9091AABFDC4D860F59D8E1 /* libPods-SafariCharger-SafariChargerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafariCharger-SafariChargerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1309CFA260A8167FC272F95 /* libPods-SafariCharger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafariCharger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F91E291F5BC3554ECEB66D /* Pods-SafariCharger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariCharger.debug.xcconfig"; path = "Target Support Files/Pods-SafariCharger/Pods-SafariCharger.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50518D57027C1A80F5FDCA5 /* libPods-SafariCharger-SafariChargerTests.a in Frameworks */,
+				13010A62DC38A13A5E366AE9 /* libPods-SafariCharger-SafariChargerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6D5B29CD2AA7C54ADD77322 /* libPods-SafariCharger.a in Frameworks */,
+				9A001684379ACA618AEA809F /* libPods-SafariCharger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				BE3C3953F8C433FC4A48775B /* libPods-SafariCharger.a */,
-				56860C5EA01689D4FB94CA2A /* libPods-SafariCharger-SafariChargerTests.a */,
+				D1309CFA260A8167FC272F95 /* libPods-SafariCharger.a */,
+				CF9091AABFDC4D860F59D8E1 /* libPods-SafariCharger-SafariChargerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,10 +205,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				47DC98B80CD4FFAF4729DB58 /* Pods-SafariCharger.debug.xcconfig */,
-				6465076BDFAE1624F8087921 /* Pods-SafariCharger.release.xcconfig */,
-				059348A20C81C9A283160979 /* Pods-SafariCharger-SafariChargerTests.debug.xcconfig */,
-				82943CECDCAFA7482389790E /* Pods-SafariCharger-SafariChargerTests.release.xcconfig */,
+				D4F91E291F5BC3554ECEB66D /* Pods-SafariCharger.debug.xcconfig */,
+				AD4A7234E7F2C0F280E54F7E /* Pods-SafariCharger.release.xcconfig */,
+				B42DFBA01A2E0F8AD71546CE /* Pods-SafariCharger-SafariChargerTests.debug.xcconfig */,
+				6B1AAF1D58E361F5136FDC27 /* Pods-SafariCharger-SafariChargerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -220,12 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SafariChargerTests" */;
 			buildPhases = (
-				46732D0D8863C8DC928C1456 /* [CP] Check Pods Manifest.lock */,
+				4DC74443605E9073F4C62CE7 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				3ED0C0AA8229E72496A42E8A /* [CP] Embed Pods Frameworks */,
-				3B32CC1DE9A6BE3ACD34988D /* [CP] Copy Pods Resources */,
+				49FDFC3B1539955782B0DA18 /* [CP] Embed Pods Frameworks */,
+				C386CEFFAB2DBFA19717591B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,14 +241,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SafariCharger" */;
 			buildPhases = (
-				F3278B3DD3B03E11DDD14099 /* [CP] Check Pods Manifest.lock */,
+				8E6E7B246217BA460A16BBE3 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				D91EA66D0B46BA272C6F48D4 /* [CP] Embed Pods Frameworks */,
-				A3D431C1524D33BBC58901DC /* [CP] Copy Pods Resources */,
+				948F894B1A58358D9F0E5882 /* [CP] Embed Pods Frameworks */,
+				BBB124AA01CBDFAF3E3F10E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,24 +345,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		3B32CC1DE9A6BE3ACD34988D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3ED0C0AA8229E72496A42E8A /* [CP] Embed Pods Frameworks */ = {
+		49FDFC3B1539955782B0DA18 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,7 +362,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		46732D0D8863C8DC928C1456 /* [CP] Check Pods Manifest.lock */ = {
+		4DC74443605E9073F4C62CE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,41 +384,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3D431C1524D33BBC58901DC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D91EA66D0B46BA272C6F48D4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F3278B3DD3B03E11DDD14099 /* [CP] Check Pods Manifest.lock */ = {
+		8E6E7B246217BA460A16BBE3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,6 +404,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		948F894B1A58358D9F0E5882 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBB124AA01CBDFAF3E3F10E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafariCharger/Pods-SafariCharger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C386CEFFAB2DBFA19717591B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafariCharger-SafariChargerTests/Pods-SafariCharger-SafariChargerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -509,7 +509,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 059348A20C81C9A283160979 /* Pods-SafariCharger-SafariChargerTests.debug.xcconfig */;
+			baseConfigurationReference = B42DFBA01A2E0F8AD71546CE /* Pods-SafariCharger-SafariChargerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -536,7 +536,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82943CECDCAFA7482389790E /* Pods-SafariCharger-SafariChargerTests.release.xcconfig */;
+			baseConfigurationReference = 6B1AAF1D58E361F5136FDC27 /* Pods-SafariCharger-SafariChargerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -560,7 +560,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47DC98B80CD4FFAF4729DB58 /* Pods-SafariCharger.debug.xcconfig */;
+			baseConfigurationReference = D4F91E291F5BC3554ECEB66D /* Pods-SafariCharger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -587,7 +587,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6465076BDFAE1624F8087921 /* Pods-SafariCharger.release.xcconfig */;
+			baseConfigurationReference = AD4A7234E7F2C0F280E54F7E /* Pods-SafariCharger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

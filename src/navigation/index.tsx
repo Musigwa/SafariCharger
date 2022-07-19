@@ -11,7 +11,7 @@ const { routeNames } = constants;
 const MainStack = createNativeStackNavigator();
 
 const AppNavigator = () => {
-  const authenticated = true;
+  const authenticated = false;
   return (
     <NavigationContainer>
       <StatusBar barStyle="light-content" translucent backgroundColor="black" />

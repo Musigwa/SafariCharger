@@ -1,0 +1,20 @@
+[
+  {
+    "backgroundColor": "white",
+    "image": "../assets/img/chargepoint.jpg",
+    "title": "About Safari Charger",
+    "subtitle": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+  },
+  {
+    "backgroundColor": "#fff",
+    "image": "../assets/img/batswap.jpeg",
+    "title": "Why Do We Use It?",
+    "subtitle": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "backgroundColor": "#fff",
+    "image": "../assets/img/carcharger.jpeg",
+    "title": "How To Get Started",
+    "subtitle": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+  }
+]

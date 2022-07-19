@@ -11,7 +11,7 @@ const PublicStack = createNativeStackNavigator();
 
 const PublicNavigator = () => {
   return (
-    <PublicStack.Navigator>
+    <PublicStack.Navigator screenOptions={{ header: () => null }}>
       <PublicStack.Screen
         name={routeNames.ONBOARDING}
         component={OnboardingScreen}

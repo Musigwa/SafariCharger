@@ -75,4 +75,9 @@ export default StyleSheet.create({
       padding: 8,
     };
   },
+  separator: {
+    backgroundColor: 'rgba(182, 195, 217,1)',
+    width: '100%',
+    height: StyleSheet.hairlineWidth,
+  },
 });

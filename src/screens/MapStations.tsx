@@ -1,4 +1,4 @@
-import CardModal from 'common/components/Card/Modal';
+import BottomSheet from 'common/components/Card/BottomSheet';
 import StationList from 'common/components/Card/StationsList';
 import Icon from 'common/components/Icon';
 import styles from 'common/styles';
@@ -13,6 +13,8 @@ import {
 import MapView, { Marker, PROVIDER_DEFAULT } from 'react-native-maps';
 import chargers from '../constants/chargers.json';
 import swaps from '../constants/swaps.json';
+import NewStation from './NewStation';
+import StationDetailsScreen from './StationDetails';
 
 type CoordsType = {
   latitude: number;
@@ -21,13 +23,11 @@ type CoordsType = {
   longitudeDelta?: number;
 };
 
-type MarkerType = {
-  coordinate: CoordsType;
-  key: string;
-};
+type MarkerType = { coordinate: CoordsType; key: string };
 
 const StationsScreen = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showAdd, setShowAdd] = useState(false);
   const [selected, setSelected] = useState<MarkerType>(chargers[0]);
 
   const { height, width } = useWindowDimensions();
@@ -42,10 +42,11 @@ const StationsScreen = () => {
   };
 
   const [position] = useState(initialRegion);
-  const flexValue = 0.68;
+  const flex = 0.7;
 
   const toggleModal = (item: any) => {
-    setSelected(item);
+    if (item) setSelected(item);
+    setShowAdd(!showAdd);
     setShowModal(!showModal);
   };
 
@@ -71,7 +72,7 @@ const StationsScreen = () => {
           >
             <View style={style.posContainer}>
               <Icon
-                name={'location-arrow'}
+                name="location-arrow"
                 type="fontawesome"
                 size={25}
                 color="white"
@@ -105,7 +106,7 @@ const StationsScreen = () => {
       <View style={style.headerExtender}>
         <View style={style.inputContainer}>
           <TouchableOpacity activeOpacity={0.7}>
-            <Icon name="search" type="evilicon" color="black" size={30} />
+            <Icon name="search" type="feather" color="black" />
           </TouchableOpacity>
           <TextInput
             placeholder="Search charge station"
@@ -113,17 +114,20 @@ const StationsScreen = () => {
             style={style.input}
           />
           <TouchableOpacity style={style.iconContainer} activeOpacity={0.7}>
-            <Icon name="equalizer" type="fontisto" color="white" size={18} />
+            <Icon name="equalizer" type="fontisto" color="black" size={18} />
           </TouchableOpacity>
         </View>
       </View>
       <StationList data={data} onItemPress={toggleModal} />
-      <CardModal
-        flexValue={flexValue}
+      <BottomSheet
         isOpen={showModal}
-        onPress={toggleModal}
-        item={selected}
-      />
+        flex={flex}
+        toggleSheet={toggleModal}
+        showAddBtn={showAdd}
+        handleAdd={() => setShowAdd(!showAdd)}
+      >
+        {showAdd ? <NewStation /> : <StationDetailsScreen item={selected} />}
+      </BottomSheet>
     </View>
   );
 };
@@ -132,7 +136,7 @@ export default StationsScreen;
 
 const style = StyleSheet.create({
   posContainer: {
-    backgroundColor: 'rgba(37, 196, 104,1)',
+    backgroundColor: 'rgba(37, 196, 12,1)',
     ...styles.center,
     borderRadius: 20,
     height: 40,
@@ -144,7 +148,10 @@ const style = StyleSheet.create({
     borderRadius: 50,
     padding: 8,
   },
-  iconContainer: { backgroundColor: 'black', borderRadius: 6, padding: 4 },
+  iconContainer: {
+    borderRadius: 6,
+    padding: 4,
+  },
   headerExtender: {
     alignSelf: 'flex-start',
     backgroundColor: 'black',
@@ -163,5 +170,5 @@ const style = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 8,
   },
-  input: { fontSize: 16, width: '65%', paddingVertical: 10 },
+  input: { fontSize: 16, width: '78%', paddingVertical: 10 },
 });

@@ -8,10 +8,16 @@
         "alias": {
           "screens": "./src/screens",
           "common": "./src/common",
+          "assets": "./src/assets",
           "navigation": "./src/navigation",
           "__tests__": "./__tests__"
         }
       }
     ]
-  ]
+  ],
+  "env": {
+    "production": {
+      "plugins": ["react-native-paper/babel"]
+    }
+  }
 }

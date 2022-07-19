@@ -13,6 +13,7 @@ import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import { TextStyle, ViewStyle } from 'react-native';
 
 const getIconType = (type?: string) => {
   switch (type?.toLowerCase()) {
@@ -49,11 +50,12 @@ const getIconType = (type?: string) => {
   }
 };
 
-type IconType = {
+export type IconType = {
   name?: string;
   size?: number;
-  color: string | number;
+  color?: string | number;
   type?: string;
+  style?: ViewStyle | TextStyle;
 };
 
 export const Icon = (props: IconType & any) => {

@@ -2,12 +2,12 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import styles from 'common/styles';
 
-const ChargeScreen = () => {
+const Ripple = () => {
   return (
-    <View style={styles.flexCenter}>
-      <Text>Charge Screen</Text>
+    <View style={styles.button}>
+      <Text>Ripple</Text>
     </View>
   );
 };
 
-export default ChargeScreen;
+export default Ripple;
