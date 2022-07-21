@@ -3,30 +3,14 @@ import third from 'assets/img/carcharger.jpeg';
 import fourth from 'assets/img/charge.jpg';
 import first from 'assets/img/chargepoint.jpg';
 import styles from 'common/styles';
-import React, { ReactNode } from 'react';
-import { Image, StyleSheet, useWindowDimensions, View } from 'react-native';
+import React from 'react';
+import { Image, StyleSheet, View } from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 
 import { useNavigation } from '@react-navigation/native';
 import constants from '../constants';
-import { useAppDispatch } from 'container/hooks';
 
 const { routeNames } = constants;
-
-const ImgWrapper = ({
-  children,
-  style,
-}: {
-  children: ReactNode;
-  style?: object;
-}) => (
-  <View style={styles.center}>
-    <View style={[{ backgroundColor: 'black', height: 80 }, style]} />
-    <View style={[styles.rowBetween, { alignItems: 'center' }]}>
-      {children}
-    </View>
-  </View>
-);
 
 const data = [
   {
@@ -61,44 +45,27 @@ const data = [
 
 const OnboardingScreen = () => {
   const { navigate } = useNavigation();
-  const { width } = useWindowDimensions();
+
+  const handleNext = () => {
+    navigate(routeNames.LOGIN);
+  };
+
   return (
     <Onboarding
-      containerStyles={{ justifyContent: 'flex-start' }}
-      onDone={() => navigate(routeNames.LOGIN)}
+      containerStyles={style.containerStyle}
+      onDone={handleNext}
+      onSkip={handleNext}
       pages={data.map((it, id) => ({
         ...it,
         image: (
-          <ImgWrapper style={{ width }}>
-            <Image
-              source={data[id - 1]?.image}
-              style={[
-                style.image,
-                {
-                  width: '20%',
-                  height: 180,
-                  borderBottomLeftRadius: 0,
-                  borderTopLeftRadius: 0,
-                },
-              ]}
-            />
-            <Image
-              source={it.image}
-              style={[style.image, { marginHorizontal: 20, width: '50%' }]}
-            />
-            <Image
-              source={data[id + 1]?.image}
-              style={[
-                style.image,
-                {
-                  width: '20%',
-                  height: 180,
-                  borderBottomRightRadius: 0,
-                  borderTopRightRadius: 0,
-                },
-              ]}
-            />
-          </ImgWrapper>
+          <View style={style.imageContainer}>
+            <View style={style.topBanner} />
+            <View style={style.imageWrapper}>
+              <Image source={data[id - 1]?.image} style={style.prevImg} />
+              <Image source={it.image} style={style.image} />
+              <Image source={data[id + 1]?.image} style={style.nextImg} />
+            </View>
+          </View>
         ),
       }))}
     />
@@ -108,10 +75,32 @@ const OnboardingScreen = () => {
 export default OnboardingScreen;
 
 const style = StyleSheet.create({
+  containerStyle: { justifyContent: 'flex-start', alignItems: 'center' },
+  topBanner: { width: '100%', height: 80, backgroundColor: 'black' },
+  imageContainer: { width: '100%' },
+  imageWrapper: {
+    width: '100%',
+    ...styles.center,
+    ...styles.rowBetween,
+    top: -50,
+  },
   image: {
-    width: 200,
+    width: '50%',
     height: 200,
-    top: -30,
     borderRadius: 10,
+  },
+  prevImg: {
+    width: '20%',
+    height: 180,
+    borderRadius: 10,
+    borderBottomLeftRadius: 0,
+    borderTopLeftRadius: 0,
+  },
+  nextImg: {
+    width: '20%',
+    height: 180,
+    borderRadius: 10,
+    borderBottomRightRadius: 0,
+    borderTopRightRadius: 0,
   },
 });

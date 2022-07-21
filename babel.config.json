@@ -11,6 +11,7 @@
           "assets": "./src/assets",
           "navigation": "./src/navigation",
           "container": "./src/container",
+          "components": "./src/components",
           "__tests__": "./__tests__"
         }
       }

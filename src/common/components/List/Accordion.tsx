@@ -7,7 +7,7 @@ import Separator from './Separator';
 
 type AccordionType = {
   showSeparator?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   iconProps: IconType;
   title: string;
 };

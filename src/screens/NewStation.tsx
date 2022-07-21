@@ -7,12 +7,13 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import MapView, { Marker, PROVIDER_DEFAULT } from 'react-native-maps';
 import styles from 'common/styles';
 import Icon from 'common/components/Icon';
 
 const NewStation = () => {
+  const [quantity, setQuantity] = useState(1);
   const { height, width } = useWindowDimensions();
   const ASPECT_RATIO = width / height;
   const initialRegion = {
@@ -23,62 +24,6 @@ const NewStation = () => {
       return this.latitudeDelta * ASPECT_RATIO;
     },
   };
-  const data = [
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-    'ev-plug-type1',
-  ];
 
   return (
     <View style={{ flex: 1 }}>
@@ -129,18 +74,73 @@ const NewStation = () => {
         </View>
       </View>
       <Text>Socket Types</Text>
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        {Array.from({ length: 50 }, () => (
-          <Text>Musigwa</Text>
-        ))}
-      </ScrollView>
-      {/* <FlatList
-        style={{ flex: 1, flexGrow: 1 }}
-        contentContainerStyle={{ backgroundColor: 'gray' }}
-        data={data}
-        renderItem={({ item }) => <Text>{item}</Text>}
-        keyExtractor={(item, index) => String(index)}
-      /> */}
+      <View
+        style={{
+          padding: 10,
+          ...styles.center,
+          ...styles.row,
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => setQuantity(quantity - 1)}
+          style={{
+            overflow: 'hidden',
+            paddingLeft: 2,
+            width: 15,
+            height: 30,
+            borderTopLeftRadius: 150,
+            borderBottomLeftRadius: 150,
+            backgroundColor: 'black',
+            ...styles.center,
+          }}
+        >
+          <Icon name="minus" color="white" size={15} />
+        </TouchableOpacity>
+        <View
+          style={{
+            backgroundColor: 'black',
+            borderRadius: 10,
+            height: 90,
+            width: 90,
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: 6,
+          }}
+        >
+          <View
+            style={{ padding: 2, backgroundColor: 'white', borderRadius: 5 }}
+          >
+            <Icon name="ev-plug-type1" size={35} />
+          </View>
+          <Text style={{ color: 'white', fontSize: 12, fontWeight: '700' }}>
+            CHAdeMO
+          </Text>
+          {quantity > 1 ? (
+            <Text style={{ color: 'white', fontSize: 12, fontWeight: '700' }}>
+              (x{quantity})
+            </Text>
+          ) : null}
+        </View>
+        <TouchableOpacity
+          onPress={() => setQuantity(quantity + 1)}
+          style={{
+            overflow: 'hidden',
+            width: 15,
+            height: 30,
+            borderTopRightRadius: 100,
+            borderBottomRightRadius: 100,
+            backgroundColor: 'black',
+            ...styles.center,
+          }}
+        >
+          <Icon
+            name="plus"
+            color="white"
+            size={15}
+            style={{ fontWeight: '700', paddingRight: 5 }}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

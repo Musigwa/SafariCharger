@@ -51,7 +51,7 @@ const getIconType = (type?: string) => {
 };
 
 export type IconType = {
-  name?: string;
+  name: string;
   size?: number;
   color?: string | number;
   type?: string;
