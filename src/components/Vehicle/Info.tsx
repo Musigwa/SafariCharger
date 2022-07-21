@@ -3,17 +3,27 @@ import styles from 'common/styles';
 import React, { useState } from 'react';
 import { Switch, Text, View } from 'react-native';
 
+const tyrePressure = { FL: 23, FR: 26, RL: 28, RR: 25 };
+
 const VehicleInfo = () => {
+  const [presIndex, setPresIndex] = useState(0);
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+  const handlePrev = () => {
+    if (presIndex > 0) setPresIndex(presIndex - 1);
+  };
+  const handleNext = () => {
+    if (presIndex < Object.keys(tyrePressure).length - 1)
+      setPresIndex(presIndex + 1);
+  };
+
   return (
     <View
       style={{
         width: '100%',
-        backgroundColor: 'rgba(rgba(200, 200, 200, 1))',
+        backgroundColor: 'rgba(200, 200, 200, 1)',
         flexDirection: 'row',
-        // flexWrap: 'wrap',
-        // alignItems: 'center',
         justifyContent: 'space-between',
         padding: 12,
       }}
@@ -50,20 +60,26 @@ const VehicleInfo = () => {
                 size={20}
                 color="gray"
                 style={{ borderRadius: 20 }}
-                onPress={() => {
-                  console.log('The icon is pressed');
-                }}
+                onPress={handleNext}
               />
               <Text style={{ fontSize: 12, fontWeight: '700' }}>
-                Tyre <Text style={{ color: 'rgba(37, 196, 12,1)' }}>(FL)</Text>
+                Tyre{'\xa0'}
+                <Text style={{ color: 'rgba(37, 196, 12,1)' }}>
+                  ({Object.keys(tyrePressure)[presIndex]})
+                </Text>
               </Text>
-              <Icon name="chevron-down" size={20} color="gray" />
+              <Icon
+                name="chevron-down"
+                size={20}
+                color="gray"
+                onPress={handlePrev}
+              />
             </View>
 
             <View>
               <Text style={{ marginBottom: 2, fontSize: 10 }}>
                 <Text style={{ fontWeight: 'bold', fontSize: 15 }}>
-                  28{'\xa0'}
+                  {`${Object.values(tyrePressure)[presIndex]}\xa0`}
                 </Text>
                 PSI
               </Text>
@@ -107,7 +123,11 @@ const VehicleInfo = () => {
           paddingHorizontal: 8,
         }}
       >
-        <Text style={{ fontSize: 16, fontWeight: '600' }}>Battery Energy</Text>
+        <Text
+          style={{ fontSize: 16, fontWeight: '600', alignSelf: 'flex-start' }}
+        >
+          Battery Energy
+        </Text>
         <View
           style={{
             flex: 0.8,
@@ -145,8 +165,13 @@ const VehicleInfo = () => {
             </Text>
           </View>
         </View>
-        <View style={[styles.row, { justifyContent: 'flex-end' }]}>
-          <Text style={{ fontWeight: '700', fontSize: 13 }}>Saving Mode</Text>
+        <View
+          style={[
+            styles.row,
+            { justifyContent: 'space-between', width: '100%' },
+          ]}
+        >
+          <Text style={{ fontWeight: '700', fontSize: 13 }}>Eco Mode</Text>
           <Switch
             trackColor={{
               false: 'rgba(200,200,200,1)',

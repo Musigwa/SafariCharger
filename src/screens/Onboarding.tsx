@@ -1,7 +1,3 @@
-import second from 'assets/img/batswap.jpeg';
-import third from 'assets/img/carcharger.jpeg';
-import fourth from 'assets/img/charge.jpg';
-import first from 'assets/img/chargepoint.jpg';
 import styles from 'common/styles';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
@@ -15,28 +11,28 @@ const { routeNames } = constants;
 const data = [
   {
     backgroundColor: 'white',
-    image: first,
+    image: require('assets/img/carcharger.jpeg'),
     title: 'About Safari Charger',
     subtitle:
       'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
   },
   {
     backgroundColor: '#fff',
-    image: second,
+    image: require('assets/img/batswap.jpeg'),
     title: 'Why Do We Use It?',
     subtitle:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
   {
     backgroundColor: '#fff',
-    image: third,
+    image: require('assets/img/charge.jpg'),
     title: 'Still Not Convinced?',
     subtitle:
       'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
   },
   {
     backgroundColor: '#fff',
-    image: fourth,
+    image: require('assets/img/chargepoint.jpg'),
     title: 'How To Get Started',
     subtitle:
       'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',

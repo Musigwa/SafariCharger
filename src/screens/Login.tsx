@@ -7,14 +7,10 @@ import {
 } from 'react-native';
 import React from 'react';
 import styles from 'common/styles';
-import { useNavigation } from '@react-navigation/native';
-import constants from '../constants';
 import { useAppDispatch } from 'container/hooks';
 import { dispatchLogin } from 'container/reducers/user';
 
-const { routeNames } = constants;
 const LoginScreen = () => {
-  const { navigate } = useNavigation();
   const dispatch = useAppDispatch();
   const handleLogin = () => {
     dispatch(dispatchLogin());
@@ -75,9 +71,9 @@ const style = StyleSheet.create({
   },
   inputContainer: {
     width: '100%',
-    flex: 0.53,
+    flex: 0.6,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   input: {
     fontSize: 16,

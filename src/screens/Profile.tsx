@@ -12,6 +12,7 @@ import List, { Accordion } from 'common/components/List';
 import Icon from 'common/components/Icon';
 import styles from 'common/styles';
 import VehicleInfo from 'components/Vehicle/Info';
+import History from 'components/Vehicle/History';
 
 const ProfileScreen = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -87,16 +88,23 @@ const ProfileScreen = () => {
             />
           </List>
           <List containerStyle={{ marginTop: 20 }}>
-            {data2.map(({ title, iconProps }, i) => (
-              <Accordion
-                key={i}
-                title={title}
-                iconProps={iconProps}
-                showSeparator={i + 1 < data1.length}
-              >
-                <Text>Items expanded</Text>
-              </Accordion>
-            ))}
+            <Accordion
+              title={data2[0].title}
+              iconProps={data1[0].iconProps}
+              showSeparator
+            >
+              <History />
+            </Accordion>
+            <Accordion
+              title={data2[1].title}
+              iconProps={data2[1].iconProps}
+              showSeparator
+            />
+            <Accordion
+              title={data2[2].title}
+              iconProps={data2[2].iconProps}
+              showSeparator
+            />
           </List>
           {/* <List data={data2} /> */}
           <View style={style.footerBanner}>
