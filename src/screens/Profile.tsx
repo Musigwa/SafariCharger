@@ -1,22 +1,11 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Switch,
-  Image,
-  ScrollView,
-} from 'react-native';
-import React, { useState } from 'react';
 import profilePic from 'assets/img/profile.jpg';
 import List, { Accordion } from 'common/components/List';
-import Icon from 'common/components/Icon';
-import styles from 'common/styles';
-import VehicleInfo from 'components/Vehicle/Info';
 import History from 'components/Vehicle/History';
+import VehicleInfo from 'components/Vehicle/Info';
+import React from 'react';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const ProfileScreen = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   const data1 = [
     {
       title: 'Profile',
@@ -69,44 +58,27 @@ const ProfileScreen = () => {
           style={{ width: '100%' }}
         >
           <List>
-            <Accordion
-              title={data1[0].title}
-              iconProps={data1[0].iconProps}
-              showSeparator
-            />
-            <Accordion
-              title={data1[1].title}
-              iconProps={data1[1].iconProps}
-              showSeparator
-            >
+            <Accordion title={data1[0].title} iconProps={data1[0].iconProps} />
+            <Accordion title={data1[1].title} iconProps={data1[1].iconProps}>
               <VehicleInfo />
             </Accordion>
             <Accordion
               title={data1[2].title}
               iconProps={data1[2].iconProps}
-              showSeparator
+              showSeparator={false}
             />
           </List>
           <List containerStyle={{ marginTop: 20 }}>
-            <Accordion
-              title={data2[0].title}
-              iconProps={data1[0].iconProps}
-              showSeparator
-            >
+            <Accordion title={data2[0].title} iconProps={data1[0].iconProps}>
               <History />
             </Accordion>
-            <Accordion
-              title={data2[1].title}
-              iconProps={data2[1].iconProps}
-              showSeparator
-            />
+            <Accordion title={data2[1].title} iconProps={data2[1].iconProps} />
             <Accordion
               title={data2[2].title}
               iconProps={data2[2].iconProps}
-              showSeparator
+              showSeparator={false}
             />
           </List>
-          {/* <List data={data2} /> */}
           <View style={style.footerBanner}>
             <Text style={style.footerText}>Safari Charger</Text>
             <Text style={[style.footerText, { marginVertical: 5 }]}>

@@ -68,11 +68,7 @@ const History = () => {
           </View>
         </Card>
         <Card containerStyle={{ marginVertical: 12 }}>
-          <ScrollView
-            // style={{ borderRadius: 5, backgroundColor: 'gray' }}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          >
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <LineChart
               data={{
                 labels: chartLabels,

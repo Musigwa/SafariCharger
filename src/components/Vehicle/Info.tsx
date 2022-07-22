@@ -1,13 +1,14 @@
 import Icon from 'common/components/Icon';
 import styles from 'common/styles';
 import React, { useState } from 'react';
-import { Switch, Text, View } from 'react-native';
+import { StyleSheet, Switch, Text, View } from 'react-native';
 
 const tyrePressure = { FL: 23, FR: 26, RL: 28, RR: 25 };
 
 const VehicleInfo = () => {
   const [presIndex, setPresIndex] = useState(0);
   const [isEnabled, setIsEnabled] = useState(false);
+  const batteryLevel = 100;
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   const handlePrev = () => {
@@ -19,47 +20,17 @@ const VehicleInfo = () => {
   };
 
   return (
-    <View
-      style={{
-        width: '100%',
-        backgroundColor: 'rgba(200, 200, 200, 1)',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: 12,
-      }}
-    >
+    <View style={style.container}>
       <View style={{ width: '48%', justifyContent: 'space-between' }}>
-        <View
-          style={{
-            backgroundColor: 'white',
-            justifyContent: 'space-between',
-            width: '100%',
-            height: 100,
-            borderRadius: 8,
-            paddingVertical: 6,
-            paddingHorizontal: 8,
-          }}
-        >
-          <Text style={{ fontSize: 16, fontWeight: '600' }}>Tyre Pressure</Text>
+        <View style={style.presCont}>
+          <Text style={style.presTitle}>Tyre Pressure</Text>
 
-          <View
-            style={{
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}
-          >
-            <View
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
+          <View style={styles.rowBetween}>
+            <View style={styles.center}>
               <Icon
                 name="chevron-up"
                 size={20}
                 color="gray"
-                style={{ borderRadius: 20 }}
                 onPress={handleNext}
               />
               <Text style={{ fontSize: 12, fontWeight: '700' }}>
@@ -78,7 +49,7 @@ const VehicleInfo = () => {
 
             <View>
               <Text style={{ marginBottom: 2, fontSize: 10 }}>
-                <Text style={{ fontWeight: 'bold', fontSize: 15 }}>
+                <Text style={style.smallText}>
                   {`${Object.values(tyrePressure)[presIndex]}\xa0`}
                 </Text>
                 PSI
@@ -87,90 +58,57 @@ const VehicleInfo = () => {
             </View>
           </View>
         </View>
-        <View
-          style={{
-            backgroundColor: 'white',
-            justifyContent: 'space-between',
-            width: '100%',
-            height: 100,
-            borderRadius: 8,
-            paddingVertical: 6,
-            paddingHorizontal: 8,
-          }}
-        >
-          <Text>Total Distance</Text>
-          <View style={[styles.row, { justifyContent: 'space-between' }]}>
+        <View style={style.distContainer}>
+          <Text style={style.presTitle}>Total Distance</Text>
+          <View style={[styles.rowBetween]}>
             <Icon name="route" type="fontawesome5" size={20} />
             <Text style={{ fontSize: 10 }}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15 }}>
-                365,000{'\xa0'}
-              </Text>
+              <Text style={style.smallText}>365,000{'\xa0'}</Text>
               Km
             </Text>
           </View>
           <Text>Check mileage</Text>
         </View>
       </View>
-      <View
-        style={{
-          backgroundColor: 'white',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          width: '45%',
-          height: 220,
-          borderRadius: 10,
-          paddingVertical: 6,
-          paddingHorizontal: 8,
-        }}
-      >
-        <Text
-          style={{ fontSize: 16, fontWeight: '600', alignSelf: 'flex-start' }}
-        >
-          Battery Energy
-        </Text>
-        <View
-          style={{
-            flex: 0.8,
-            height: '70%',
-            alignItems: 'center',
-            width: '60%',
-            borderRadius: 15,
-            borderColor: 'rgba(rgba(200, 200, 200, 1))',
-            borderWidth: 0.6,
-          }}
-        >
-          <View
-            style={{
-              backgroundColor: 'rgba(248,251,255,1)',
-              flex: 0.2,
-              width: '99%',
-              alignItems: 'center',
-              borderTopEndRadius: 15,
-              borderTopStartRadius: 15,
-            }}
-          />
-          <View
-            style={{
-              flex: 0.8,
-              width: '100%',
-              alignItems: 'center',
-              backgroundColor: 'rgba(42,110,232,1)',
-              borderBottomEndRadius: 10,
-              borderBottomStartRadius: 10,
-              justifyContent: 'center',
-            }}
-          >
-            <Text style={{ fontSize: 16, color: 'white' }}>
-              <Text style={{ fontWeight: 'bold', fontSize: 28 }}>80</Text>%
+      <View style={style.batContainer}>
+        <Text style={style.presTitle}>Battery Energy</Text>
+        <View style={style.cellContainer}>
+          {batteryLevel < 50 ? (
+            <Text
+              style={{
+                fontSize: 16,
+                color: isEnabled ? 'rgba(37,196,12,1)' : 'rgba(42,110,232,1)',
+              }}
+            >
+              <Text style={{ fontWeight: 'bold', fontSize: 28 }}>
+                {batteryLevel}
+              </Text>
+              %
             </Text>
+          ) : null}
+          <View
+            style={[
+              style.level,
+              {
+                flex: batteryLevel / 100,
+                backgroundColor: isEnabled
+                  ? 'rgba(37,196,12,1)'
+                  : 'rgba(42,110,232,1)',
+                borderRadius: batteryLevel === 100 ? 15 : 0,
+              },
+            ]}
+          >
+            {batteryLevel >= 50 ? (
+              <Text style={{ fontSize: 16, color: 'white' }}>
+                <Text style={{ fontWeight: 'bold', fontSize: 28 }}>
+                  {batteryLevel}
+                </Text>
+                %
+              </Text>
+            ) : null}
           </View>
         </View>
-        <View
-          style={[
-            styles.row,
-            { justifyContent: 'space-between', width: '100%' },
-          ]}
-        >
+        <View style={[styles.rowBetween]}>
           <Text style={{ fontWeight: '700', fontSize: 13 }}>Eco Mode</Text>
           <Switch
             trackColor={{
@@ -189,3 +127,59 @@ const VehicleInfo = () => {
 };
 
 export default VehicleInfo;
+
+const style = StyleSheet.create({
+  container: {
+    width: '100%',
+    backgroundColor: 'rgba(200, 200, 200, 1)',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 12,
+  },
+  presCont: {
+    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    width: '100%',
+    height: 100,
+    borderRadius: 8,
+    paddingVertical: 6,
+    paddingHorizontal: 8,
+  },
+  presTitle: { fontSize: 14, fontWeight: '600' },
+  smallText: { fontWeight: 'bold', fontSize: 15 },
+  distContainer: {
+    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    width: '100%',
+    height: 100,
+    borderRadius: 8,
+    paddingVertical: 6,
+    paddingHorizontal: 8,
+  },
+  batContainer: {
+    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    width: '45%',
+    height: 220,
+    borderRadius: 10,
+    paddingVertical: 6,
+    paddingHorizontal: 8,
+  },
+  cellContainer: {
+    height: '70%',
+    alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
+    width: '60%',
+    borderRadius: 15,
+    borderColor: 'rgba(200, 200, 200, 1))',
+    borderWidth: 0.6,
+  },
+  level: {
+    width: '102%',
+    alignItems: 'center',
+    borderBottomEndRadius: 15,
+    borderBottomStartRadius: 15,
+    justifyContent: 'center',
+  },
+});
