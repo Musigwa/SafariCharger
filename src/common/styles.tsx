@@ -9,6 +9,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
   },
+  flexBetween: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
   get flexCenter() {
     return { flex: 1, ...this.center };
   },

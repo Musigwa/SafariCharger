@@ -42,11 +42,11 @@ const StationsScreen = () => {
   };
 
   const [position] = useState(initialRegion);
-  const flex = 0.7;
+  const flex = 0.8;
 
   const toggleModal = (item: any) => {
     if (item) setSelected(item);
-    setShowAdd(!showAdd);
+    if (showModal && showAdd) setShowAdd(false);
     setShowModal(!showModal);
   };
 
@@ -54,13 +54,7 @@ const StationsScreen = () => {
 
   return (
     <View style={styles.mapContainer}>
-      <MapView
-        provider={PROVIDER_DEFAULT}
-        // provider={PROVIDER_GOOGLE}
-        style={styles.map}
-        region={position}
-        // onPress={onMapPress}
-      >
+      <MapView provider={PROVIDER_DEFAULT} style={styles.map} region={position}>
         {position && (
           <Marker
             title="Our current location"
@@ -81,14 +75,14 @@ const StationsScreen = () => {
           </Marker>
         )}
         {data.map(item => {
-          const { latitude, longitude } = item.coordinate;
+          // const { latitude, longitude } = item.coordinate;
           const isSwap = item.key?.includes('bar');
           return (
             <Marker
               key={item.key}
-              title={item.key}
+              title={item.name}
               coordinate={item.coordinate}
-              description={`${latitude.toFixed(2)}, ${longitude.toFixed(2)}`}
+              description={item.connectors.map(i => i.name).join(', ')}
               onCalloutPress={() => toggleModal(item)}
             >
               <View style={style.markerContainer}>

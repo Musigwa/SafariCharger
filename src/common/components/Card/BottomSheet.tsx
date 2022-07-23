@@ -30,17 +30,7 @@ const BottomSheet = ({
       {!showAddBtn ? (
         <TouchableOpacity
           activeOpacity={0.8}
-          style={{
-            overflow: 'hidden',
-            height: 40,
-            width: 80,
-            paddingTop: 15,
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderTopLeftRadius: 40,
-            borderTopRightRadius: 40,
-            backgroundColor: 'white',
-          }}
+          style={style.addBtn}
           onPress={handleAdd}
         >
           <Icon name="plus" color="black" />
@@ -108,6 +98,16 @@ const style = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '700',
     fontSize: 16,
+  },
+  addBtn: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 40,
+    marginBottom: 10,
+    marginRight: 5,
+    padding: 15,
+    alignSelf: 'flex-end',
+    backgroundColor: 'white',
   },
 });
 

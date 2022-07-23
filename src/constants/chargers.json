@@ -7,7 +7,11 @@
     "key": "foo5",
     "name": "KCC Charging Station",
     "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "Tesla (USA)", "abbrev": "tesla" },
+    "connectors": [
+      { "name": "Tesla (USA)", "abbrev": "tesla" },
+      { "name": "CHADEMO", "abbrev": "Cha" },
+      { "name": "CCS Combo T2", "abbrev": "CCS2" }
+    ],
     "ratings": ["11KW / AC - THREE PHASES"],
     "image": "https://www.afrik21.africa/wp-content/uploads/2022/03/shutterstock_1503415649-1-800x400.jpg"
   },
@@ -19,7 +23,7 @@
     "key": "foo6",
     "name": "KCC Charging Station",
     "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "connectors": [{ "name": "CHADEMO", "abbrev": "chademo" }],
     "ratings": ["11KW / AC - THREE PHASES"],
     "image": "https://newsroom.gy/wp-content/uploads/2022/04/electric-vehicle-charging-stations-750x430.jpg"
   },
@@ -31,7 +35,7 @@
     "key": "foo7",
     "name": "KCC Charging Station",
     "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "connectors": [{ "name": "CHADEMO", "abbrev": "chademo" }],
     "ratings": ["55KW / DC"],
     "image": "https://site-assets.evgo.com/f/78437/1540x700/cbc2969ed8/cities_page_figure_image_chargingrow.jpg"
   },
@@ -43,7 +47,7 @@
     "key": "foo8",
     "name": "KCC Charging Station",
     "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "CCS Combo T2", "abbrev": "ccs2" },
+    "connectors": [{ "name": "CCS Combo T2", "abbrev": "ccs2" }],
     "ratings": ["11KW / AC - THREE PHASES"],
     "image": "https://site-assets.evgo.com/f/78437/1540x700/cbc2969ed8/cities_page_figure_image_chargingrow.jpg"
   },
@@ -55,7 +59,7 @@
     "key": "foo9",
     "name": "KCC Charging Station",
     "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "connectors": [{ "name": "CHADEMO", "abbrev": "chademo" }],
     "ratings": ["50KW / DC"],
     "image": "https://images.unsplash.com/photo-1650452233063-8f308616b729?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
   },
@@ -67,7 +71,7 @@
     "key": "foo10",
     "name": "KCC Charging Station",
     "location": "KG 2, Roundabout Kigali",
-    "connector": { "name": "CHADEMO", "abbrev": "chademo" },
+    "connectors": [{ "name": "CHADEMO", "abbrev": "chademo" }],
     "ratings": ["62KW / DC"],
     "image": "https://images.unsplash.com/photo-1650452233063-8f308616b729?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
   }

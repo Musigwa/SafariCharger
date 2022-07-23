@@ -73,14 +73,14 @@ const StationList = ({ data, onItemPress }: any) => {
                 name={
                   item.key.includes('bar')
                     ? 'car-battery'
-                    : `ev-plug-${item.connector.abbrev}`
+                    : `ev-plug-${item.connectors[0].abbrev}`
                 }
                 type="materialcommunity"
                 size={28}
                 color="black"
               />
               <View>
-                <Text style={style.connector}>{item.connector.name}</Text>
+                <Text style={style.connector}>{item.connectors[0].name}</Text>
                 <Text
                   ellipsizeMode="tail"
                   numberOfLines={1}

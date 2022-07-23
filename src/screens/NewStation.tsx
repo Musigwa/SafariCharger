@@ -3,9 +3,8 @@ import {
   useWindowDimensions,
   StyleSheet,
   Text,
-  ScrollView,
-  FlatList,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import React, { useState } from 'react';
 import MapView, { Marker, PROVIDER_DEFAULT } from 'react-native-maps';
@@ -13,7 +12,8 @@ import styles from 'common/styles';
 import Icon from 'common/components/Icon';
 
 const NewStation = () => {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(2);
   const { height, width } = useWindowDimensions();
   const ASPECT_RATIO = width / height;
   const initialRegion = {
@@ -25,122 +25,147 @@ const NewStation = () => {
     },
   };
 
+  const handleSelect = (id: number) => {
+    const uncheck = selected === id;
+    setSelected(uncheck ? null : id);
+    setQuantity(Number(!uncheck));
+  };
+
   return (
-    <View style={{ flex: 1 }}>
-      <MapView
-        provider={PROVIDER_DEFAULT}
-        style={[{ borderRadius: 10, height: 200 }]}
-        region={initialRegion}
-      >
-        <Marker
-          title="Our current location"
-          description={`${initialRegion.latitude.toFixed(
-            2,
-          )}, ${initialRegion.longitude.toFixed(2)}`}
-          coordinate={initialRegion}
-          key={initialRegion.latitude.toString()}
-        >
-          <View style={style.posContainer}>
-            <Icon
-              name="location-arrow"
-              type="fontawesome"
-              size={25}
-              color="white"
-            />
-          </View>
-        </Marker>
-      </MapView>
+    <View style={styles.flexBetween}>
       <View>
-        <Text style={{ color: 'gray', fontSize: 16, lineHeight: 40 }}>
+        <MapView
+          provider={PROVIDER_DEFAULT}
+          style={[style.map]}
+          region={initialRegion}
+        >
+          <Marker
+            title="Our current location"
+            description={`${initialRegion.latitude.toFixed(
+              2,
+            )}, ${initialRegion.longitude.toFixed(2)}`}
+            coordinate={initialRegion}
+            key={initialRegion.latitude.toString()}
+          >
+            <View style={style.posContainer}>
+              <Icon
+                name="location-arrow"
+                type="fontawesome"
+                size={25}
+                color="white"
+              />
+            </View>
+          </Marker>
+        </MapView>
+        <View style={style.addPhoto}>
+          <Icon name="camera" type="feather" color="white" />
+        </View>
+      </View>
+      <View>
+        <Text style={[style.text, { lineHeight: 40 }]}>
           Name:{'\u2003\u2003'}
-          <Text style={{ color: 'black', fontWeight: '700', fontSize: 16 }}>
-            Feru Charging Station
-          </Text>
+          <Text style={style.heavyText}>Feru Charging Station</Text>
           {'\u2003'}
           <Icon name="edit" type="antdesign" color="black" />
         </Text>
         <View style={{ flexDirection: 'row' }}>
-          <Text style={{ color: 'gray', fontSize: 16 }}>
-            Address:{'\u2003'}
-          </Text>
+          <Text style={style.text}>Address:{'\u2003'}</Text>
           <View>
-            <Text style={{ color: 'gray', fontSize: 16 }}>
-              KK 549 St, Kicukiro
-            </Text>
+            <Text style={style.text}>KK 549 St, Kicukiro</Text>
             <Text style={{ color: 'rgba(177, 180, 186,1)', fontSize: 14 }}>
               3 Charger point
             </Text>
           </View>
         </View>
       </View>
-      <Text>Socket Types</Text>
-      <View
-        style={{
-          padding: 10,
-          ...styles.center,
-          ...styles.row,
-        }}
-      >
-        <TouchableOpacity
-          onPress={() => setQuantity(quantity - 1)}
-          style={{
-            overflow: 'hidden',
-            paddingLeft: 2,
-            width: 15,
-            height: 30,
-            borderTopLeftRadius: 150,
-            borderBottomLeftRadius: 150,
-            backgroundColor: 'black',
-            ...styles.center,
-          }}
+      <View>
+        <Text style={style.heavyText}>Socket Types</Text>
+        <ScrollView
+          horizontal
+          style={{ marginVertical: 10 }}
+          showsHorizontalScrollIndicator={false}
         >
-          <Icon name="minus" color="white" size={15} />
-        </TouchableOpacity>
-        <View
-          style={{
-            backgroundColor: 'black',
-            borderRadius: 10,
-            height: 90,
-            width: 90,
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: 6,
-          }}
-        >
-          <View
-            style={{ padding: 2, backgroundColor: 'white', borderRadius: 5 }}
-          >
-            <Icon name="ev-plug-type1" size={35} />
-          </View>
-          <Text style={{ color: 'white', fontSize: 12, fontWeight: '700' }}>
-            CHAdeMO
-          </Text>
-          {quantity > 1 ? (
-            <Text style={{ color: 'white', fontSize: 12, fontWeight: '700' }}>
-              (x{quantity})
-            </Text>
-          ) : null}
-        </View>
-        <TouchableOpacity
-          onPress={() => setQuantity(quantity + 1)}
-          style={{
-            overflow: 'hidden',
-            width: 15,
-            height: 30,
-            borderTopRightRadius: 100,
-            borderBottomRightRadius: 100,
-            backgroundColor: 'black',
-            ...styles.center,
-          }}
-        >
-          <Icon
-            name="plus"
-            color="white"
-            size={15}
-            style={{ fontWeight: '700', paddingRight: 5 }}
-          />
-        </TouchableOpacity>
+          {[
+            'ev-plug-ccs1',
+            'ev-plug-ccs2',
+            'ev-plug-chademo',
+            'ev-plug-tesla',
+            'ev-plug-type1',
+            'ev-plug-type2',
+          ].map((plug, id) => {
+            const checkSelected = selected === id;
+            return (
+              <TouchableOpacity
+                activeOpacity={0.8}
+                key={id}
+                style={[
+                  styles.row,
+                  style.plugContainer,
+                  {
+                    justifyContent: checkSelected ? 'space-between' : 'center',
+                    backgroundColor: checkSelected
+                      ? 'black'
+                      : 'rgba(248,248,248,1)',
+                  },
+                ]}
+                onPress={() => handleSelect(id)}
+              >
+                {checkSelected ? (
+                  <TouchableOpacity
+                    activeOpacity={0.9}
+                    onPress={() => setQuantity(quantity - 1)}
+                    style={[
+                      styles.center,
+                      style.minusBtn,
+                      { backgroundColor: 'white' },
+                    ]}
+                  >
+                    <Icon name="minus" type="entypo" color="black" size={18} />
+                  </TouchableOpacity>
+                ) : null}
+                <View style={[style.plugWrapper]}>
+                  <View style={style.plugIconContainer}>
+                    <Icon name={plug} size={35} color="gray" />
+                  </View>
+                  <Text
+                    style={[
+                      style.plugName,
+                      { color: checkSelected ? 'white' : 'black' },
+                    ]}
+                  >
+                    {plug.split('-')[2].toUpperCase()}
+                  </Text>
+                  {quantity > 1 ? (
+                    <Text
+                      style={[
+                        style.plugName,
+                        { color: checkSelected ? 'white' : 'black' },
+                      ]}
+                    >
+                      (x{quantity})
+                    </Text>
+                  ) : null}
+                </View>
+                {checkSelected ? (
+                  <TouchableOpacity
+                    activeOpacity={0.9}
+                    onPress={() => setQuantity(quantity + 1)}
+                    style={[styles.center, style.plusBtn]}
+                  >
+                    <Icon name="plus" type="entypo" color="black" size={18} />
+                  </TouchableOpacity>
+                ) : null}
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
       </View>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        style={[styles.center, style.addBtn]}
+      >
+        <Text style={style.btnText}>Add Station</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -154,5 +179,63 @@ const style = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     width: 40,
+  },
+  map: { borderRadius: 10, height: 200 },
+  text: { color: 'gray', fontSize: 16 },
+  get heavyText() {
+    return { ...this.text, color: 'black', fontWeight: 'bold' };
+  },
+  addBtn: {
+    backgroundColor: 'black',
+    alignSelf: 'center',
+    paddingHorizontal: 30,
+    paddingVertical: 13,
+    borderRadius: 30,
+  },
+  btnText: { color: 'white', fontWeight: 'bold' },
+  plusBtn: {
+    overflow: 'hidden',
+    width: 15,
+    height: 30,
+    borderTopLeftRadius: 150,
+    borderBottomLeftRadius: 150,
+    backgroundColor: 'white',
+  },
+  minusBtn: {
+    overflow: 'hidden',
+    width: 15,
+    height: 30,
+    borderTopRightRadius: 100,
+    borderBottomRightRadius: 100,
+    backgroundColor: 'white',
+  },
+  plugContainer: {
+    margin: 8,
+    paddingVertical: 20,
+    borderRadius: 10,
+    width: 100,
+    alignItems: 'center',
+  },
+  plugIconContainer: {
+    padding: 2,
+    backgroundColor: 'white',
+    borderRadius: 5,
+    marginBottom: 5,
+  },
+  plugWrapper: {
+    borderRadius: 10,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    // paddingHorizontal: 5,
+  },
+  plugName: { color: 'black', fontSize: 12, fontWeight: '600' },
+  addPhoto: {
+    backgroundColor: 'black',
+    borderRadius: 30,
+    padding: 10,
+    alignSelf: 'flex-end',
+    position: 'absolute',
+    bottom: -20,
+    right: 10,
   },
 });

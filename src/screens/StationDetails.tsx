@@ -46,67 +46,97 @@ const StationDetailsScreen = ({ item }: PropType) => {
         contentContainerStyle={{ paddingTop: 10 }}
         showsVerticalScrollIndicator={false}
       >
-        {Array.from({ length: 5 }, (it, i) => (
+        {Array.from({ length: 5 }, (it, i) => {
+          const checkSelected = selected === i;
+          return (
+            <TouchableOpacity
+              key={i}
+              style={[
+                style.bannerContainer,
+                {
+                  marginBottom: 8,
+                  backgroundColor: checkSelected
+                    ? 'rgba(37, 196, 12,1)'
+                    : 'white',
+                },
+              ]}
+              activeOpacity={0.6}
+              onPress={() => {
+                if (checkSelected) setSelected(null);
+                else setSelected(i);
+              }}
+            >
+              <Icon
+                name={
+                  isSwap
+                    ? 'car-battery'
+                    : `ev-plug-${item.connectors[0].abbrev}`
+                }
+                type="materialcommunity"
+                size={50}
+                color="black"
+              />
+              <View
+                style={[
+                  style.bannerMiddle,
+                  {
+                    borderStartColor: checkSelected
+                      ? 'white'
+                      : 'rgba(164, 186, 222,.5)',
+                    borderEndColor: checkSelected
+                      ? 'white'
+                      : 'rgba(164, 186, 222,.5)',
+                  },
+                ]}
+              >
+                <Text style={style.bannerMiddleTitle}>
+                  {item.connectors[0].name}, 100Ah
+                </Text>
+                <Text
+                  style={[
+                    style.bannerMiddleDesc,
+                    { color: checkSelected ? 'white' : 'gray' },
+                  ]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  Mileage: {item.ratings[0]}
+                </Text>
+              </View>
+              <View style={styles.center}>
+                <Text style={style.bannerMiddleTitle}>500 RWF</Text>
+                <Text
+                  style={[
+                    style.bannerMiddleDesc,
+                    { color: checkSelected ? 'white' : 'gray' },
+                  ]}
+                >
+                  Per {isSwap ? '100%' : 'Kwh'}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          );
+        })}
+      </ScrollView>
+      {selected !== null ? (
+        <View style={{ paddingVertical: 10 }}>
           <TouchableOpacity
-            key={i}
+            activeOpacity={0.8}
             style={[
-              style.bannerContainer,
-              {
-                marginBottom: 8,
-                backgroundColor:
-                  selected === i ? 'rgba(37, 196, 12,1)' : 'white',
-              },
+              style.btnContainer,
+              { backgroundColor: selected !== null ? 'black' : 'gray' },
             ]}
-            activeOpacity={0.6}
+            disabled={selected === null}
             onPress={() => {
-              if (selected === i) setSelected(null);
-              else setSelected(i);
+              Alert.alert('Alert', 'The charger is booked');
             }}
           >
-            <Icon
-              name={isSwap ? 'car-battery' : `ev-plug-${item.connector.abbrev}`}
-              type="materialcommunity"
-              size={50}
-              color="black"
-            />
-            <View style={[styles.center, style.bannerMiddle]}>
-              <Text style={style.bannerMiddleTitle}>
-                {item.connector.name}, 100Ah
-              </Text>
-              <Text
-                style={style.bannerMiddleDesc}
-                numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                Mileage: {item.ratings[0]}
-              </Text>
-            </View>
-            <View style={styles.center}>
-              <Text style={style.bannerMiddleTitle}>500 RWF</Text>
-              <Text style={style.bannerMiddleDesc}>
-                Per {isSwap ? '100%' : 'Kwh'}
-              </Text>
-            </View>
+            <Text style={style.btnText}>
+              BOOK {isSwap ? 'BATTERY' : 'CHARGER'}
+            </Text>
           </TouchableOpacity>
-        ))}
-      </ScrollView>
-      <View style={{ paddingVertical: 10 }}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={[
-            style.btnContainer,
-            { backgroundColor: selected !== null ? 'black' : 'gray' },
-          ]}
-          disabled={selected === null}
-          onPress={() => {
-            Alert.alert('Alert', 'The charger is booked');
-          }}
-        >
-          <Text style={style.btnText}>
-            BOOK {isSwap ? 'BATTERY' : 'CHARGER'}
-          </Text>
-        </TouchableOpacity>
-      </View>
+        </View>
+      ) : null}
     </>
   );
 };
@@ -150,14 +180,14 @@ const style = StyleSheet.create({
   },
   bannerMiddle: {
     borderStartColor: 'rgba(164, 186, 222,.5)',
-    borderStartWidth: 1,
     borderEndColor: 'rgba(164, 186, 222,.5)',
+    borderStartWidth: 1,
     borderEndWidth: 1,
     paddingHorizontal: 10,
     width: '55%',
   },
   bannerMiddleTitle: { fontWeight: '700', marginBottom: 6, color: 'black' },
-  bannerMiddleDesc: { color: 'gray', fontWeight: '600', maxWidth: 180 },
+  bannerMiddleDesc: { fontWeight: 'bold', maxWidth: 180 },
   btnContainer: {
     backgroundColor: 'black',
     borderRadius: 30,
