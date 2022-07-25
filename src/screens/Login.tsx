@@ -1,16 +1,15 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import React from 'react';
-import styles from 'common/styles';
 import { useAppDispatch } from 'container/hooks';
 import { dispatchLogin } from 'container/reducers/user';
+import constants from '../constants';
+import { useNavigation } from '@react-navigation/native';
+import { style } from './Singup';
+
+const { routeNames } = constants;
 
 const LoginScreen = () => {
+  const { navigate } = useNavigation();
   const dispatch = useAppDispatch();
   const handleLogin = () => {
     dispatch(dispatchLogin());
@@ -23,16 +22,32 @@ const LoginScreen = () => {
         <Text style={style.headerTitle}>Sign In</Text>
         <View style={style.inputContainer}>
           <TextInput
-            placeholder="First Name"
+            placeholder="Tel -Or- email"
             clearButtonMode="always"
             style={style.input}
+            autoComplete="tel"
+            keyboardType={'phone-pad' || 'email-address'}
           />
           <TextInput
-            placeholder="Last Name"
+            placeholder="Password"
             clearButtonMode="always"
-            style={style.input}
+            style={[style.input, { marginBottom: 0 }]}
+            autoComplete="password-new"
+            secureTextEntry
           />
         </View>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          style={{ alignSelf: 'flex-start', marginLeft: 20 }}
+          onPress={() => navigate(routeNames.SINGUP)}
+        >
+          <Text style={{ fontWeight: '600' }}>
+            Don't have an account yet?{'\u2003'}
+            <Text style={{ color: 'rgba(37, 196, 12,1)', fontWeight: 'bold' }}>
+              Sign Up
+            </Text>
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.8}
           style={style.btnContainer}
@@ -46,55 +61,3 @@ const LoginScreen = () => {
 };
 
 export default LoginScreen;
-
-const style = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  topBanner: { backgroundColor: 'black', height: '20%', width: '100%' },
-  form: {
-    width: '90%',
-    height: '60%',
-    backgroundColor: 'white',
-    position: 'relative',
-    top: -80,
-    ...styles.center,
-    justifyContent: 'space-between',
-    paddingVertical: 40,
-    borderRadius: 10,
-  },
-  headerTitle: {
-    fontSize: 28,
-    fontWeight: 'bold',
-  },
-  inputContainer: {
-    width: '100%',
-    flex: 0.6,
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-  },
-  input: {
-    fontSize: 16,
-    width: '90%',
-    padding: 10,
-    borderWidth: 0.5,
-    borderColor: 'rgba(182, 195, 217,0.7)',
-    borderRadius: 5,
-    height: 50,
-    color: 'rgba(182, 195, 217, 0.7)',
-  },
-  btnContainer: {
-    backgroundColor: 'black',
-    borderRadius: 30,
-    paddingVertical: 15,
-    width: '90%',
-  },
-  btnText: {
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: '700',
-    fontSize: 16,
-  },
-});

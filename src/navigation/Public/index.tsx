@@ -15,8 +15,8 @@ const PublicNavigator = () => {
         name={routeNames.ONBOARDING}
         component={OnboardingScreen}
       />
-      <PublicStack.Screen name={routeNames.LOGIN} component={LoginScreen} />
       <PublicStack.Screen name={routeNames.SINGUP} component={SingupScreen} />
+      <PublicStack.Screen name={routeNames.LOGIN} component={LoginScreen} />
     </PublicStack.Navigator>
   );
 };

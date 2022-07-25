@@ -43,7 +43,7 @@ const OnboardingScreen = () => {
   const { navigate } = useNavigation();
 
   const handleNext = () => {
-    navigate(routeNames.LOGIN);
+    navigate(routeNames.SINGUP);
   };
 
   return (

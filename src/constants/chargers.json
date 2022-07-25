@@ -9,8 +9,8 @@
     "location": "KG 2, Roundabout Kigali",
     "connectors": [
       { "name": "Tesla (USA)", "abbrev": "tesla" },
-      { "name": "CHADEMO", "abbrev": "Cha" },
-      { "name": "CCS Combo T2", "abbrev": "CCS2" }
+      { "name": "CHADEMO", "abbrev": "chademo" },
+      { "name": "CCS Combo T2", "abbrev": "ccs2" }
     ],
     "ratings": ["11KW / AC - THREE PHASES"],
     "image": "https://www.afrik21.africa/wp-content/uploads/2022/03/shutterstock_1503415649-1-800x400.jpg"

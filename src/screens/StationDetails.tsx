@@ -46,7 +46,7 @@ const StationDetailsScreen = ({ item }: PropType) => {
         contentContainerStyle={{ paddingTop: 10 }}
         showsVerticalScrollIndicator={false}
       >
-        {Array.from({ length: 5 }, (it, i) => {
+        {item.connectors.map((conn: any, i: number) => {
           const checkSelected = selected === i;
           return (
             <TouchableOpacity
@@ -67,11 +67,7 @@ const StationDetailsScreen = ({ item }: PropType) => {
               }}
             >
               <Icon
-                name={
-                  isSwap
-                    ? 'car-battery'
-                    : `ev-plug-${item.connectors[0].abbrev}`
-                }
+                name={isSwap ? 'car-battery' : `ev-plug-${conn.abbrev}`}
                 type="materialcommunity"
                 size={50}
                 color="black"
@@ -89,9 +85,7 @@ const StationDetailsScreen = ({ item }: PropType) => {
                   },
                 ]}
               >
-                <Text style={style.bannerMiddleTitle}>
-                  {item.connectors[0].name}, 100Ah
-                </Text>
+                <Text style={style.bannerMiddleTitle}>{conn.name}, 100Ah</Text>
                 <Text
                   style={[
                     style.bannerMiddleDesc,
